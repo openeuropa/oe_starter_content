@@ -1,6 +1,6 @@
 # OpenEuropa oe_starter_content
 
-The OpenEuropa Starter Content provides a staring template for OpenEuropa content modules.
+The OpenEuropa Starter Content provides a starting template for OpenEuropa content modules.
 
 **Please note:** This project is not compatible with oe_content content types.
 
