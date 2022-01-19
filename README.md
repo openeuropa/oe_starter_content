@@ -1,4 +1,4 @@
-# OpenEuropa oe_starter_content
+# OpenEuropa Starter Content
 
 The OpenEuropa Starter Content provides a starting template for OpenEuropa content modules.
 

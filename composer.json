@@ -1,6 +1,6 @@
 {
     "name": "openeuropa/oe_starter_content",
-    "description": "OpenEuropa Drupal module template.",
+    "description": "OpenEuropa Drupal module that contains the EC entity types.",
     "type": "drupal-module",
     "license": "EUPL-1.2",
     "minimum-stability": "dev",
@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\oe_starter_content\\": "./tests/"
+            "Drupal\\Tests\\oe_starter_content\\": "./tests/src"
         }
     },
     "extra": {
