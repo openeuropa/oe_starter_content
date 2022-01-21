@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_news.body
+    - field.field.node.oe_news.field_oe_featured_media
     - field.field.node.oe_news.field_oe_publication_date
     - field.field.node.oe_news.field_oe_summary
     - node.type.oe_news
@@ -29,6 +30,16 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_oe_featured_media:
+    type: entity_reference_autocomplete
+    weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_oe_publication_date:
     type: datetime_default

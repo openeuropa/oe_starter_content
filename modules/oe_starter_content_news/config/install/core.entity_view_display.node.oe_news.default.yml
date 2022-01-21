@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_news.body
+    - field.field.node.oe_news.field_oe_featured_media
     - field.field.node.oe_news.field_oe_publication_date
     - field.field.node.oe_news.field_oe_summary
     - node.type.oe_news
@@ -20,7 +21,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 12
+    region: content
+  field_oe_featured_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_oe_publication_date:
     type: datetime_default
@@ -29,14 +38,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 103
+    weight: 13
     region: content
   field_oe_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 104
+    weight: 11
     region: content
   links:
     settings: {  }

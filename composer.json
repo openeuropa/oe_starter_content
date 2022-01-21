@@ -6,8 +6,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "php": ">=7.4",
         "drupal/core": "^9.2",
-        "php": ">=7.4"
+        "drupal/entity_browser": "^2.6"
     },
     "require-dev": {
         "composer/installers": "^2.0",
