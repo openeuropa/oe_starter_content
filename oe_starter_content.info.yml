@@ -4,3 +4,11 @@ package: OpenEuropa
 
 type: module
 core_version_requirement: ^9.2
+dependencies:
+  - drupal:datetime
+
+config_devel:
+  install:
+    - field.storage.node.field_oe_publication_date
+    - field.storage.node.field_oe_summary
+  optional:
