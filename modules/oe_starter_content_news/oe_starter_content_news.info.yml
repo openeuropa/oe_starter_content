@@ -1,13 +1,13 @@
 name: OpenEuropa Starter Content News
 type: module
-description: Provides a news starter content.
+description: OpenEuropa Starter Content News.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
-  - drupal:media
   - drupal:datetime
-  - oe_starter_content:oe_starter_content_featured_media_field
+  - drupal:media
   - oe_starter_content:oe_starter_content
+  - oe_starter_content:oe_starter_content_featured_media_field
 
 config_devel:
   install:
