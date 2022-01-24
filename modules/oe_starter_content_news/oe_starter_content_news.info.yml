@@ -6,7 +6,8 @@ package: OpenEuropa Starter Content
 dependencies:
   - drupal:media
   - drupal:datetime
-  - oe_starter_content_featured_media_field
+  - oe_starter_content:oe_starter_content_featured_media_field
+  - oe_starter_content:oe_starter_content
 
 config_devel:
   install:
