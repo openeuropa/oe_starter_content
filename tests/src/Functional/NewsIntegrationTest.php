@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_starter_content_news\Functional;
+namespace Drupal\Tests\oe_starter_content\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
@@ -13,9 +13,9 @@ use Drupal\Tests\TestFileCreationTrait;
 /**
  * Ensure OE Starter Content News are created.
  *
- * @group oe_starter_content_news
+ * @group oe_starter_content
  */
-class NewsTest extends BrowserTestBase {
+class NewsIntegrationTest extends BrowserTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait {
@@ -33,6 +33,7 @@ class NewsTest extends BrowserTestBase {
     'node',
     'oe_starter_content_news',
     'config',
+    'entity_browser',
   ];
 
   /**
@@ -86,6 +87,8 @@ class NewsTest extends BrowserTestBase {
     $page = $this->getSession()->getPage();
     $page->fillField('title[0][value]', 'Example title');
     $page->fillField('body[0][value]', 'Example Content');
+    // $this->clickLink('Edit summary');
+    // $page->fillField('body[0][summary]', 'Example Summary');
     $page->fillField('field_oe_summary[0][value]', 'Example Introduction');
     $page->fillField('field_oe_publication_date[0][value][date]', '2022-01-24');
     $page->fillField('field_oe_publication_date[0][value][time]', '00:00:00');
