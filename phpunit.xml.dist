@@ -9,7 +9,8 @@
   </php>
   <testsuites>
     <testsuite name="OpenEuropa Starter Content">
-      <directory>./tests/</directory>
+      <directory>./tests/src</directory>
+      <directory>./modules/**/tests/src/</directory>
     </testsuite>
   </testsuites>
 </phpunit>
