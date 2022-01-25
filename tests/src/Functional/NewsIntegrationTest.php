@@ -87,8 +87,6 @@ class NewsIntegrationTest extends BrowserTestBase {
     $page = $this->getSession()->getPage();
     $page->fillField('title[0][value]', 'Example title');
     $page->fillField('body[0][value]', 'Example Content');
-    // $this->clickLink('Edit summary');
-    // $page->fillField('body[0][summary]', 'Example Summary');
     $page->fillField('field_oe_summary[0][value]', 'Example Introduction');
     $page->fillField('field_oe_publication_date[0][value][date]', '2022-01-24');
     $page->fillField('field_oe_publication_date[0][value][time]', '00:00:00');
