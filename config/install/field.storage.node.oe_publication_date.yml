@@ -4,8 +4,8 @@ dependencies:
   module:
     - datetime
     - node
-id: node.field_oe_publication_date
-field_name: field_oe_publication_date
+id: node.oe_publication_date
+field_name: oe_publication_date
 entity_type: node
 type: datetime
 settings:

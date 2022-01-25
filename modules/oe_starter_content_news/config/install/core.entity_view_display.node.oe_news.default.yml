@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_news.body
-    - field.field.node.oe_news.field_oe_featured_media
-    - field.field.node.oe_news.field_oe_publication_date
-    - field.field.node.oe_news.field_oe_summary
+    - field.field.node.oe_news.oe_featured_media
+    - field.field.node.oe_news.oe_publication_date
+    - field.field.node.oe_news.oe_summary
     - node.type.oe_news
   module:
     - datetime
@@ -23,7 +23,7 @@ content:
     third_party_settings: {  }
     weight: 12
     region: content
-  field_oe_featured_media:
+  oe_featured_media:
     type: entity_reference_label
     label: above
     settings:
@@ -31,7 +31,7 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
-  field_oe_publication_date:
+  oe_publication_date:
     type: datetime_default
     label: above
     settings:
@@ -40,7 +40,7 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
-  field_oe_summary:
+  oe_summary:
     type: basic_string
     label: above
     settings: {  }

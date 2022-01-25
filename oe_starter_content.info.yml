@@ -9,5 +9,5 @@ dependencies:
 
 config_devel:
   install:
-    - field.storage.node.field_oe_publication_date
-    - field.storage.node.field_oe_summary
+    - field.storage.node.oe_publication_date
+    - field.storage.node.oe_summary

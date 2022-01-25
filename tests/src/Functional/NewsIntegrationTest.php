@@ -58,7 +58,7 @@ class NewsIntegrationTest extends BrowserTestBase {
   }
 
   /**
-   * Creation of a News content through the UI..
+   * Creation of a News content through the UI.
    */
   public function testCreateNews() {
     // Assert session.
@@ -87,16 +87,15 @@ class NewsIntegrationTest extends BrowserTestBase {
     $page = $this->getSession()->getPage();
     $page->fillField('title[0][value]', 'Example title');
     $page->fillField('body[0][value]', 'Example Content');
-    $page->fillField('field_oe_summary[0][value]', 'Example Introduction');
-    $page->fillField('field_oe_publication_date[0][value][date]', '2022-01-24');
-    $page->fillField('field_oe_publication_date[0][value][time]', '00:00:00');
+    $page->fillField('oe_summary[0][value]', 'Example Introduction');
+    $page->fillField('oe_publication_date[0][value][date]', '2022-01-24');
+    $page->fillField('oe_publication_date[0][value][time]', '00:00:00');
     $mediaName = $mediaImage->getName() . ' (' . $mediaImage->id() . ')';
-    $page->fillField('field_oe_featured_media[0][target_id]', $mediaName);
+    $page->fillField('oe_featured_media[0][target_id]', $mediaName);
     $page->pressButton('Save');
 
     // Assert News content.
     $this->assertSession()->statusCodeEquals(200);
-    $page = $this->getSession()->getPage();
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');

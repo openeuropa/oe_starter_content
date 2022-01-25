@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_news.body
-    - field.field.node.oe_news.field_oe_featured_media
-    - field.field.node.oe_news.field_oe_publication_date
-    - field.field.node.oe_news.field_oe_summary
+    - field.field.node.oe_news.oe_featured_media
+    - field.field.node.oe_news.oe_publication_date
+    - field.field.node.oe_news.oe_summary
     - node.type.oe_news
   module:
     - datetime
@@ -31,7 +31,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_oe_featured_media:
+  oe_featured_media:
     type: entity_reference_autocomplete
     weight: 121
     region: content
@@ -41,13 +41,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_oe_publication_date:
+  oe_publication_date:
     type: datetime_default
     weight: 124
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_oe_summary:
+  oe_summary:
     type: string_textarea
     weight: 122
     region: content

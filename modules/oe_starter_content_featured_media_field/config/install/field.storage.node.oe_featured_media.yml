@@ -4,8 +4,8 @@ dependencies:
   module:
     - media
     - oe_starter_content_featured_media_field
-id: node.field_oe_featured_media
-field_name: field_oe_featured_media
+id: node.oe_featured_media
+field_name: oe_featured_media
 entity_type: node
 type: entity_reference
 settings:

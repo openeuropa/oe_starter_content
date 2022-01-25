@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_oe_summary
+    - field.storage.node.oe_summary
     - node.type.oe_news
-id: node.oe_news.field_oe_summary
-field_name: field_oe_summary
+id: node.oe_news.oe_summary
+field_name: oe_summary
 entity_type: node
 bundle: oe_news
 label: Introduction

@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - node
-id: node.field_oe_summary
-field_name: field_oe_summary
+id: node.oe_summary
+field_name: oe_summary
 entity_type: node
 type: string_long
 settings:
