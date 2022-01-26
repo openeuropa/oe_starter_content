@@ -75,8 +75,8 @@ class NewsIntegrationTest extends BrowserTestBase {
       'field_media_image' => [
         [
           'target_id' => 1,
-          'alt' => 'default alt',
-          'title' => 'default title',
+          'alt' => 'Starter Image test alt',
+          'title' => 'Starter Image test title',
         ],
       ],
     ]);
@@ -100,7 +100,9 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
     $assert_session->pageTextContains('01/24/2022 - 00:00');
-    $assert_session->pageTextContains('Starter Image test');
+    $assert_session->responseContains('image-test.png');
+    $assert_session->responseContains('Starter Image test');
+    $assert_session->responseContains('Starter Image test alt');
   }
 
 }
