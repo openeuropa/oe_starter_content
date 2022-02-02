@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'OpenEuropa Starter Content News'
+name: 'News'
 type: oe_news
 description: ''
 help: ''

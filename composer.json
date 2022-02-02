@@ -8,7 +8,7 @@
     "require": {
         "php": ">=7.4",
         "drupal/core": "^9.2",
-        "drupal/entity_browser": "^2.6"
+        "openeuropa/oe_media": "^1.14"
     },
     "require-dev": {
         "composer/installers": "^2.0",

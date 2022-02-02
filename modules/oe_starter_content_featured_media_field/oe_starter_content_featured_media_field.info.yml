@@ -5,8 +5,8 @@ package: OpenEuropa Starter Content
 type: module
 core_version_requirement: ^9.2
 dependencies:
-  - drupal:entity_browser
   - drupal:media
+  - openeuropa:oe_media_avportal
 
 config_devel:
   install:
