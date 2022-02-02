@@ -5,7 +5,6 @@ core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
   - drupal:datetime
-  - drupal:media
   - oe_starter_content:oe_starter_content
   - oe_starter_content:oe_starter_content_featured_media_field
 
