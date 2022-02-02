@@ -18,22 +18,14 @@ use Drupal\Tests\TestFileCreationTrait;
 class NewsIntegrationTest extends BrowserTestBase {
 
   use MediaTypeCreationTrait;
-  use TestFileCreationTrait {
-    getTestFiles as drupalGetTestFiles;
-  }
+  use TestFileCreationTrait;
 
   /**
    * {@inheritdoc}
    */
   protected static $modules = [
-    'datetime',
-    'media',
-    'system',
-    'user',
     'node',
     'oe_starter_content_news',
-    'config',
-    'entity_browser',
   ];
 
   /**
@@ -65,14 +57,13 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session = $this->assertSession();
 
     // Create a sample media entity to be embedded.
-    $this->createMediaType('image', ['id' => 'image']);
     File::create([
       'uri' => $this->getTestFiles('image')[0]->uri,
     ])->save();
-    $mediaImage = Media::create([
+    $media_image = Media::create([
       'bundle' => 'image',
       'name' => 'Starter Image test',
-      'field_media_image' => [
+      'oe_media_image' => [
         [
           'target_id' => 1,
           'alt' => 'Starter Image test alt',
@@ -80,22 +71,22 @@ class NewsIntegrationTest extends BrowserTestBase {
         ],
       ],
     ]);
-    $mediaImage->save();
+    $media_image->save();
 
     // Create a News item.
     $this->drupalGet('node/add/oe_news');
     $page = $this->getSession()->getPage();
-    $page->fillField('title[0][value]', 'Example title');
-    $page->fillField('body[0][value]', 'Example Content');
-    $page->fillField('oe_summary[0][value]', 'Example Introduction');
-    $page->fillField('oe_publication_date[0][value][date]', '2022-01-24');
-    $page->fillField('oe_publication_date[0][value][time]', '00:00:00');
-    $mediaName = $mediaImage->getName() . ' (' . $mediaImage->id() . ')';
-    $page->fillField('oe_featured_media[0][target_id]', $mediaName);
+    $page->fillField('Title', 'Example title');
+    $page->fillField('Content', 'Example Content');
+    $page->fillField('Introduction', 'Example Introduction');
+    $page->fillField('Date', '2022-01-24');
+    $page->fillField('Time', '00:00:00');
+    $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
+    $page->fillField('Use existing media', $media_name);
     $page->pressButton('Save');
 
-    // Assert News content.
-    $this->assertSession()->statusCodeEquals(200);
+    // Assert media document has been created.
+    $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
