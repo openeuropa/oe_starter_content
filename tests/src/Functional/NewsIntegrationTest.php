@@ -52,7 +52,6 @@ class NewsIntegrationTest extends BrowserTestBase {
    * Creation of a News content through the UI.
    */
   public function testCreateNews() {
-    // Assert session.
     $assert_session = $this->assertSession();
 
     // Create a sample media entity to be embedded.
