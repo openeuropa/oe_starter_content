@@ -1,6 +1,6 @@
 name: OpenEuropa Starter Content News
 type: module
-description: OpenEuropa Starter Content News.
+description: A simple news content type.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:

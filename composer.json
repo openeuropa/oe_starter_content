@@ -1,6 +1,6 @@
 {
     "name": "openeuropa/oe_starter_content",
-    "description": "OpenEuropa Drupal module that contains the EC entity types.",
+    "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
     "type": "drupal-module",
     "license": "EUPL-1.2",
     "minimum-stability": "dev",

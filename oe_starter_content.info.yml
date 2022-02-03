@@ -1,5 +1,5 @@
 name: OpenEuropa Starter Content
-description: Contains the EC entity types in Drupal.
+description: Contains code and field storages shared with submodules.
 package: OpenEuropa
 
 type: module
