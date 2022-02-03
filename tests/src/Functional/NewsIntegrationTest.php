@@ -24,7 +24,6 @@ class NewsIntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected static $modules = [
-    'node',
     'oe_starter_content_news',
   ];
 

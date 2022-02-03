@@ -6,6 +6,7 @@ type: module
 core_version_requirement: ^9.2
 dependencies:
   - drupal:datetime
+  - drupal:node
 
 config_devel:
   install:
