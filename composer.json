@@ -11,6 +11,7 @@
         "openeuropa/oe_media": "^1.14"
     },
     "require-dev": {
+        "amphp/parallel-functions": "~1.0.0",
         "composer/installers": "^2.0",
         "drupal/config_devel": "^1.8",
         "drupal/core-composer-scaffold": "^9.2",
@@ -58,7 +59,8 @@
         },
         "_readme": [
             "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
-            "Explicit requirement for drupal/file_link due to https://www.drupal.org/project/file_link/issues/3147517. It can be removed when oe_media requires version 2.0.4 or above."
+            "Explicit requirement for drupal/file_link due to https://www.drupal.org/project/file_link/issues/3147517. It can be removed when oe_media requires version 2.0.4 or above.",
+            "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors."
         ]
     },
     "config": {
