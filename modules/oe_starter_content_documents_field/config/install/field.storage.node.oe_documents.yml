@@ -11,7 +11,7 @@ entity_type: node
 type: entity_reference
 settings:
   target_type: media
-module: core
+module: oe_starter_content_documents_field
 locked: false
 cardinality: -1
 translatable: true
