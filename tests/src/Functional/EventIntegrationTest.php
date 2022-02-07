@@ -46,7 +46,7 @@ class EventIntegrationTest extends BrowserTestBase {
       'delete own oe_event content',
       'edit own oe_event content',
       'create media',
-      'update any media'
+      'update any media',
     ]);
     $this->drupalLogin($user);
 
@@ -61,7 +61,7 @@ class EventIntegrationTest extends BrowserTestBase {
 
     // Create the file.
     $file = File::create([
-      'uri' => $this->getTestFiles('text')[0]->uri
+      'uri' => $this->getTestFiles('text')[0]->uri,
     ]);
     $file->save();
 
