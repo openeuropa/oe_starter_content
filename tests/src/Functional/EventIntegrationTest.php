@@ -24,7 +24,6 @@ class EventIntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected static $modules = [
-    'node',
     'oe_starter_content_event',
   ];
 
@@ -81,13 +80,13 @@ class EventIntegrationTest extends BrowserTestBase {
 
     // Create an event.
     $this->drupalGet('node/add/oe_event');
-    $page->fillField('title[0][value]', 'Example Event title');
-    $page->fillField('body[0][value]', 'Example Event content');
-    $page->fillField('oe_summary[0][value]', 'Example Event introduction');
+    $page->fillField('Title', 'Example Event title');
+    $page->fillField('Content', 'Example Event content');
+    $page->fillField('Introduction', 'Example Event introduction');
     $media_name = $media_document->getName() . ' (' . $media_document->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $media_name);
     $edit = [
-      'oe_location[0][address][country_code]' => 'BE',
+      'Country' => 'BE',
     ];
     $this->submitForm($edit, 'Save');
 
@@ -98,9 +97,9 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('City field is required.');
 
     // Fill values.
-    $page->fillField('oe_location[0][address][address_line1]', 'Rue Philippe Le Bon 1');
-    $page->fillField('oe_location[0][address][postal_code]', '1000');
-    $page->fillField('oe_location[0][address][locality]', 'Bruxelles');
+    $page->fillField('Street address', 'Rue Philippe Le Bon 1');
+    $page->fillField('Postal code', '1000');
+    $page->fillField('City', 'Bruxelles');
     $page->fillField('oe_event_dates[0][value][date]', '2022-01-22');
     $page->fillField('oe_event_dates[0][value][time]', '02:12:22');
     $page->fillField('oe_event_dates[0][end_value][date]', '2022-02-24');
