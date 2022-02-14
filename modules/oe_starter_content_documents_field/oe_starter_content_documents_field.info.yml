@@ -1,13 +1,12 @@
-name: OpenEuropa Starter Content Featured Media Field
-description: Contains the Starter Content Featured media field storage.
+name: OpenEuropa Starter Content Documents Field
+description: Contains the Starter Content Documents field storage.
 package: OpenEuropa Starter Content
 
 type: module
 core_version_requirement: ^9.2
 dependencies:
   - drupal:media
-  - drupal:datetime_range
-  - drupal:address
+  - openeuropa:oe_media
 
 config_devel:
   install:
