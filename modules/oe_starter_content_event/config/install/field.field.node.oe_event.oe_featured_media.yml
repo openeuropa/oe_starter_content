@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_featured_media
+    - media.type.av_portal_photo
+    - media.type.image
     - node.type.oe_event
 id: node.oe_event.oe_featured_media
 field_name: oe_featured_media
@@ -18,5 +20,11 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      document: document
+      av_portal_photo: av_portal_photo
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: av_portal_photo
 field_type: entity_reference

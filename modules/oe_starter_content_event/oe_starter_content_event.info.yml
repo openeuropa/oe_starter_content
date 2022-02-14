@@ -4,8 +4,6 @@ description: OpenEuropa Starter Content Event.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
-  - drupal:datetime_range
-  - drupal:address
   - oe_starter_content:oe_starter_content
   - oe_starter_content:oe_starter_content_featured_media_field
   - oe_starter_content:oe_starter_content_documents_field
