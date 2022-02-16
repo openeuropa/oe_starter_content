@@ -4,7 +4,6 @@ dependencies:
   config:
     - node.type.oe_event
   module:
-    - node
     - content_translation
 third_party_settings:
   content_translation:
