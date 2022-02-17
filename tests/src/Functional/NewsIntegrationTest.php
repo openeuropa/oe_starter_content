@@ -11,7 +11,7 @@ use Drupal\file\Entity\File;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
- * Ensure OE Starter Content News are created.
+ * Ensure OE Starter Content News is created.
  *
  * @group oe_starter_content
  */

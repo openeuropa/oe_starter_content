@@ -21,6 +21,8 @@ drupal:
     # Enable the modules.
     - "./vendor/bin/drush en config_devel -y"
     - "./vendor/bin/drush en oe_starter_content -y"
+    - "./vendor/bin/drush en oe_starter_content_news -y"
+    - "./vendor/bin/drush en oe_starter_content_event -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:
@@ -29,6 +31,7 @@ drupal:
         - "bower_components"
         - "vendor"
         - "${drupal.root}"
+      file_private_path: "sites/default/files/private"
 
 commands:
   drupal:site-setup:
