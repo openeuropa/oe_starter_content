@@ -2,18 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.oe_news.body
-    - field.field.node.oe_news.oe_featured_media
-    - field.field.node.oe_news.oe_publication_date
-    - field.field.node.oe_news.oe_summary
-    - node.type.oe_news
+    - field.field.node.oe_sc_news.body
+    - field.field.node.oe_sc_news.oe_featured_media
+    - field.field.node.oe_sc_news.oe_publication_date
+    - field.field.node.oe_sc_news.oe_summary
+    - node.type.oe_sc_news
   module:
     - datetime
     - text
     - user
-id: node.oe_news.default
+id: node.oe_sc_news.default
 targetEntityType: node
-bundle: oe_news
+bundle: oe_sc_news
 mode: default
 content:
   body:
@@ -53,4 +53,8 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
-hidden: {  }
+hidden:
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true

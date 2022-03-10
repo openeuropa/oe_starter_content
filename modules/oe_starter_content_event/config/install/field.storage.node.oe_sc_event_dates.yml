@@ -2,14 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - datetime_range
     - node
-id: node.oe_summary
-field_name: oe_summary
+id: node.oe_sc_event_dates
+field_name: oe_sc_event_dates
 entity_type: node
-type: text_long
+type: daterange
 settings:
-  case_sensitive: false
-module: core
+  datetime_type: datetime
+module: datetime_range
 locked: false
 cardinality: 1
 translatable: true

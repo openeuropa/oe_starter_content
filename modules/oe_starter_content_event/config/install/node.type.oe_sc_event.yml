@@ -1,8 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'News'
-type: oe_news
+name: Event
+type: oe_sc_event
 description: ''
 help: ''
 new_revision: true

@@ -9,8 +9,3 @@ dependencies:
   - drupal:node
   - drupal:datetime_range
   - drupal:address
-
-config_devel:
-  install:
-    - field.storage.node.oe_publication_date
-    - field.storage.node.oe_summary

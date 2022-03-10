@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.oe_news
+    - node.type.oe_sc_event
   module:
     - text
-id: node.oe_news.body
+id: node.oe_sc_event.body
 field_name: body
 entity_type: node
-bundle: oe_news
+bundle: oe_sc_event
 label: Content
 description: ''
 required: false
