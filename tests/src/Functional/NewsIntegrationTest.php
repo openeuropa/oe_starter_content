@@ -41,9 +41,9 @@ class NewsIntegrationTest extends BrowserTestBase {
     // Create user.
     $user = $this->drupalCreateUser([
       'access content overview',
-      'create oe_news content',
-      'delete own oe_news content',
-      'edit own oe_news content',
+      'create oe_sc_news content',
+      'delete own oe_sc_news content',
+      'edit own oe_sc_news content',
     ]);
     $this->drupalLogin($user);
   }
@@ -72,13 +72,12 @@ class NewsIntegrationTest extends BrowserTestBase {
     $media_image->save();
 
     // Create a News item.
-    $this->drupalGet('node/add/oe_news');
+    $this->drupalGet('node/add/oe_sc_news');
     $page = $this->getSession()->getPage();
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $page->fillField('Date', '2022-01-24');
-    $page->fillField('Time', '00:00:00');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('Use existing media', $media_name);
     $page->pressButton('Save');
@@ -88,7 +87,7 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
-    $assert_session->pageTextContains('01/24/2022 - 00:00');
+    $assert_session->pageTextContains('01/24/2022');
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
