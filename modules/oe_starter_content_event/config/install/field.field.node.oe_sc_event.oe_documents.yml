@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.oe_documents
     - media.type.document
+    - media.type.image
     - node.type.oe_sc_event
 id: node.oe_sc_event.oe_documents
 field_name: oe_documents

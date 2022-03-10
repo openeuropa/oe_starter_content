@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_featured_media
+    - media.type.av_portal_photo
+    - media.type.image
     - node.type.oe_sc_event
 id: node.oe_sc_event.oe_featured_media
 field_name: oe_featured_media

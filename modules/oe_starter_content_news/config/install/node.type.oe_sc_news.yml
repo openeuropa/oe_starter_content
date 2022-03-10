@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'News'
+name: News
 type: oe_sc_news
 description: ''
 help: ''

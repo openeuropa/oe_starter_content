@@ -4,9 +4,9 @@ dependencies:
   config:
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_documents
-    - field.field.node.oe_sc_event.oe_sc_event_dates
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_location
+    - field.field.node.oe_sc_event.oe_sc_event_dates
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
@@ -40,16 +40,6 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-  oe_sc_event_dates:
-    type: daterange_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
-    third_party_settings: {  }
-    weight: 4
-    region: content
   oe_featured_media:
     type: entity_reference_entity_view
     label: above
@@ -65,6 +55,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
+    region: content
+  oe_sc_event_dates:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 4
     region: content
   oe_summary:
     type: basic_string

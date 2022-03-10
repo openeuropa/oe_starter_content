@@ -2,6 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.oe_featured_media
+    - media.type.av_portal_photo
+    - media.type.image
     - node.type.oe_sc_news
 id: node.oe_sc_news.oe_featured_media
 field_name: oe_featured_media
