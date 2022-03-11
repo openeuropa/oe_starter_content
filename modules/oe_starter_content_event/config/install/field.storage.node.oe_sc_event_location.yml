@@ -4,8 +4,8 @@ dependencies:
   module:
     - address
     - node
-id: node.oe_location
-field_name: oe_location
+id: node.oe_sc_event_location
+field_name: oe_sc_event_location
 entity_type: node
 type: address
 settings: {  }

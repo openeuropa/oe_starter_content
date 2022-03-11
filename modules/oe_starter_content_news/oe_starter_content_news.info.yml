@@ -4,6 +4,8 @@ description: A simple news content type.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
+  - drupal:datetime
+  - drupal:node
   - oe_content:oe_content
   - oe_content:oe_content_featured_media_field
   - oe_starter_content:oe_starter_content

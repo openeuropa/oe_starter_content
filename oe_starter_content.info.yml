@@ -1,11 +1,5 @@
 name: OpenEuropa Starter Content
 description: Contains code and field storages shared with submodules.
 package: OpenEuropa
-
 type: module
 core_version_requirement: ^9.2
-dependencies:
-  - drupal:datetime
-  - drupal:node
-  - drupal:datetime_range
-  - drupal:address

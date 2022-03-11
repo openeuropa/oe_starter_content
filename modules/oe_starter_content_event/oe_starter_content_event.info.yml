@@ -4,6 +4,9 @@ description: OpenEuropa Starter Content Event.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
+  - drupal:address
+  - drupal:datetime_range
+  - drupal:node
   - oe_content:oe_content
   - oe_content:oe_content_documents_field
   - oe_content:oe_content_featured_media_field
@@ -17,10 +20,10 @@ config_devel:
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
-    - field.field.node.oe_sc_event.oe_location
+    - field.field.node.oe_sc_event.oe_sc_event_location
     - field.field.node.oe_sc_event.oe_sc_event_dates
     - field.field.node.oe_sc_event.oe_summary
-    - field.storage.node.oe_location
+    - field.storage.node.oe_sc_event_location
     - field.storage.node.oe_sc_event_dates
     - node.type.oe_sc_event
   optional:
