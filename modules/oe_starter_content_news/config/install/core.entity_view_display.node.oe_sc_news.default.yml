@@ -29,13 +29,12 @@ content:
     weight: 100
     region: content
   oe_featured_media:
-    type: entity_reference_entity_view
+    type: oe_featured_media_label
     label: above
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 102
     region: content
   oe_publication_date:
     type: datetime_default

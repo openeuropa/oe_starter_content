@@ -32,8 +32,8 @@ content:
     settings: {  }
     third_party_settings: {  }
   oe_featured_media:
-    type: entity_reference_autocomplete
-    weight: 6
+    type: oe_featured_media_autocomplete
+    weight: 122
     region: content
     settings:
       match_operator: CONTAINS

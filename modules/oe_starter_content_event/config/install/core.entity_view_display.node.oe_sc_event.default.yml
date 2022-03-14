@@ -41,13 +41,12 @@ content:
     weight: 6
     region: content
   oe_featured_media:
-    type: entity_reference_entity_view
+    type: oe_featured_media_label
     label: above
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 102
     region: content
   oe_sc_event_location:
     type: address_default
