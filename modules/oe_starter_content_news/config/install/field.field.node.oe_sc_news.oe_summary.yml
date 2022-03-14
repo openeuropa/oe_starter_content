@@ -3,11 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_summary
-    - node.type.oe_event
-id: node.oe_event.oe_summary
+    - node.type.oe_sc_news
+  module:
+    - text
+id: node.oe_sc_news.oe_summary
 field_name: oe_summary
 entity_type: node
-bundle: oe_event
+bundle: oe_sc_news
 label: Introduction
 description: ''
 required: false

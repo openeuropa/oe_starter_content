@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_location
-    - node.type.oe_event
+    - field.storage.node.oe_sc_event_location
+    - node.type.oe_sc_event
   module:
     - address
-id: node.oe_event.oe_location
-field_name: oe_location
+id: node.oe_sc_event.oe_sc_event_location
+field_name: oe_sc_event_location
 entity_type: node
-bundle: oe_event
+bundle: oe_sc_event
 label: Location
 description: ''
 required: false

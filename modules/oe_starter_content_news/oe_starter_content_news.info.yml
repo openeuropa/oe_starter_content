@@ -4,17 +4,21 @@ description: A simple news content type.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
+  - drupal:datetime
+  - drupal:node
+  - oe_content:oe_content
+  - oe_content:oe_content_featured_media_field
   - oe_starter_content:oe_starter_content
-  - oe_starter_content:oe_starter_content_featured_media_field
+  - openeuropa:oe_media_avportal
 
 config_devel:
   install:
-    - core.entity_form_display.node.oe_news.default
-    - core.entity_view_display.node.oe_news.default
-    - field.field.node.oe_news.body
-    - field.field.node.oe_news.oe_featured_media
-    - field.field.node.oe_news.oe_publication_date
-    - field.field.node.oe_news.oe_summary
-    - node.type.oe_news
+    - core.entity_form_display.node.oe_sc_news.default
+    - core.entity_view_display.node.oe_sc_news.default
+    - field.field.node.oe_sc_news.body
+    - field.field.node.oe_sc_news.oe_featured_media
+    - field.field.node.oe_sc_news.oe_publication_date
+    - field.field.node.oe_sc_news.oe_summary
+    - node.type.oe_sc_news
   optional:
-    - language.content_settings.node.oe_news
+    - language.content_settings.node.oe_sc_news

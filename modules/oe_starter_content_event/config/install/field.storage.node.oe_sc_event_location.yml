@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - address
     - node
-id: node.oe_summary
-field_name: oe_summary
+id: node.oe_sc_event_location
+field_name: oe_sc_event_location
 entity_type: node
-type: text_long
-settings:
-  case_sensitive: false
-module: core
+type: address
+settings: {  }
+module: address
 locked: false
 cardinality: 1
 translatable: true

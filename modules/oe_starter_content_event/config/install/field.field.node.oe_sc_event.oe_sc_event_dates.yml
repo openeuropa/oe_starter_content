@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_event_dates
-    - node.type.oe_event
+    - field.storage.node.oe_sc_event_dates
+    - node.type.oe_sc_event
   module:
     - datetime_range
-id: node.oe_event.oe_event_dates
-field_name: oe_event_dates
+id: node.oe_sc_event.oe_sc_event_dates
+field_name: oe_sc_event_dates
 entity_type: node
-bundle: oe_event
+bundle: oe_sc_event
 label: 'Event dates'
 description: ''
 required: false

@@ -41,9 +41,9 @@ class EventIntegrationTest extends BrowserTestBase {
     // Create user.
     $user = $this->drupalCreateUser([
       'access content overview',
-      'create oe_event content',
-      'delete own oe_event content',
-      'edit own oe_event content',
+      'create oe_sc_event content',
+      'delete own oe_sc_event content',
+      'edit own oe_sc_event content',
       'create media',
       'update any media',
     ]);
@@ -97,7 +97,7 @@ class EventIntegrationTest extends BrowserTestBase {
     $media_image->save();
 
     // Create an event.
-    $this->drupalGet('node/add/oe_event');
+    $this->drupalGet('node/add/oe_sc_event');
     $page->fillField('Title', 'Example Event title');
     $page->fillField('Content', 'Example Event content');
     $page->fillField('Introduction', 'Example Event introduction');
@@ -118,10 +118,10 @@ class EventIntegrationTest extends BrowserTestBase {
     $page->fillField('Street address', 'Rue Philippe Le Bon 1');
     $page->fillField('Postal code', '1000');
     $page->fillField('City', 'Bruxelles');
-    $page->fillField('oe_event_dates[0][value][date]', '2022-01-22');
-    $page->fillField('oe_event_dates[0][value][time]', '02:12:22');
-    $page->fillField('oe_event_dates[0][end_value][date]', '2022-02-24');
-    $page->fillField('oe_event_dates[0][end_value][time]', '20:00:00');
+    $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-22');
+    $page->fillField('oe_sc_event_dates[0][value][time]', '02:12:22');
+    $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-02-24');
+    $page->fillField('oe_sc_event_dates[0][end_value][time]', '20:00:00');
     $page->pressButton('Save');
 
     // Assert Event content.
@@ -134,7 +134,7 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Thu, 02/24/2022 - 20:00');
 
     // Create an event with image.
-    $this->drupalGet('node/add/oe_event');
+    $this->drupalGet('node/add/oe_sc_event');
     $page->fillField('Title', 'Example Event image title');
     $page->fillField('Content', 'Example Event image content');
     $page->fillField('Introduction', 'Example Event image introduction');
@@ -147,10 +147,10 @@ class EventIntegrationTest extends BrowserTestBase {
     $page->fillField('Street address', 'Rue Philippe Le Bon 1');
     $page->fillField('Postal code', '1000');
     $page->fillField('City', 'Bruxelles');
-    $page->fillField('oe_event_dates[0][value][date]', '2022-01-22');
-    $page->fillField('oe_event_dates[0][value][time]', '02:12:22');
-    $page->fillField('oe_event_dates[0][end_value][date]', '2022-02-24');
-    $page->fillField('oe_event_dates[0][end_value][time]', '20:00:00');
+    $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-22');
+    $page->fillField('oe_sc_event_dates[0][value][time]', '02:12:22');
+    $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-02-24');
+    $page->fillField('oe_sc_event_dates[0][end_value][time]', '20:00:00');
     $page->pressButton('Save');
 
     $assert_session->responseContains('image-test.png');

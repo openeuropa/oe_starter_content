@@ -4,22 +4,27 @@ description: OpenEuropa Starter Content Event.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
+  - drupal:address
+  - drupal:datetime_range
+  - drupal:node
+  - oe_content:oe_content
+  - oe_content:oe_content_documents_field
+  - oe_content:oe_content_featured_media_field
   - oe_starter_content:oe_starter_content
-  - oe_starter_content:oe_starter_content_documents_field
-  - oe_starter_content:oe_starter_content_featured_media_field
+  - openeuropa:oe_media_avportal
 
 config_devel:
   install:
-    - core.entity_form_display.node.oe_event.default
-    - core.entity_view_display.node.oe_event.default
-    - field.field.node.oe_event.body
-    - field.field.node.oe_event.oe_documents
-    - field.field.node.oe_event.oe_event_dates
-    - field.field.node.oe_event.oe_featured_media
-    - field.field.node.oe_event.oe_location
-    - field.field.node.oe_event.oe_summary
-    - field.storage.node.oe_event_dates
-    - field.storage.node.oe_location
-    - node.type.oe_event
+    - core.entity_form_display.node.oe_sc_event.default
+    - core.entity_view_display.node.oe_sc_event.default
+    - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.oe_documents
+    - field.field.node.oe_sc_event.oe_featured_media
+    - field.field.node.oe_sc_event.oe_sc_event_location
+    - field.field.node.oe_sc_event.oe_sc_event_dates
+    - field.field.node.oe_sc_event.oe_summary
+    - field.storage.node.oe_sc_event_location
+    - field.storage.node.oe_sc_event_dates
+    - node.type.oe_sc_event
   optional:
-    - language.content_settings.node.oe_event
+    - language.content_settings.node.oe_sc_event

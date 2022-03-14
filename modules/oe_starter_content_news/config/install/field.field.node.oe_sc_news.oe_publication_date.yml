@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_publication_date
-    - node.type.oe_news
+    - node.type.oe_sc_news
   module:
     - datetime
-id: node.oe_news.oe_publication_date
+id: node.oe_sc_news.oe_publication_date
 field_name: oe_publication_date
 entity_type: node
-bundle: oe_news
+bundle: oe_sc_news
 label: 'Publication date'
 description: ''
 required: false

@@ -2,13 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_featured_media
-    - node.type.oe_news
-id: node.oe_news.oe_featured_media
-field_name: oe_featured_media
+    - field.storage.node.oe_documents
+    - media.type.document
+    - media.type.image
+    - node.type.oe_sc_event
+id: node.oe_sc_event.oe_documents
+field_name: oe_documents
 entity_type: node
-bundle: oe_news
-label: 'Featured media'
+bundle: oe_sc_event
+label: Documents
 description: ''
 required: false
 translatable: false
@@ -18,6 +20,6 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      av_portal_photo: av_portal_photo
+      document: document
       image: image
 field_type: entity_reference

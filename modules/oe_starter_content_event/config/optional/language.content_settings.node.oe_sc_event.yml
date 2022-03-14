@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.oe_news
+    - node.type.oe_sc_event
   module:
     - content_translation
 third_party_settings:
@@ -10,8 +10,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.oe_news
+id: node.oe_sc_event
 target_entity_type_id: node
-target_bundle: oe_news
+target_bundle: oe_sc_event
 default_langcode: site_default
 language_alterable: true
