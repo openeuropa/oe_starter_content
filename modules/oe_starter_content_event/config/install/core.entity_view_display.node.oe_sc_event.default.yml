@@ -25,12 +25,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   oe_documents:
     type: entity_reference_entity_view
@@ -39,7 +39,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   oe_featured_media:
     type: oe_featured_media_label
@@ -47,7 +47,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 0
     region: content
   oe_sc_event_dates:
     type: daterange_default
@@ -57,21 +57,21 @@ content:
       format_type: medium
       separator: '-'
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   oe_sc_event_location:
     type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   oe_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   oe_content_content_owner: true
