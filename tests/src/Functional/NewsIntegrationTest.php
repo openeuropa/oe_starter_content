@@ -80,6 +80,7 @@ class NewsIntegrationTest extends BrowserTestBase {
     $page->fillField('Date', '2022-01-24');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('Media item', $media_name);
+    $page->fillField('Caption', 'Starter Image caption');
     $page->pressButton('Save');
 
     // Assert media document has been created.
@@ -89,6 +90,7 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Example Introduction');
     $assert_session->pageTextContains('01/24/2022');
     $assert_session->responseContains('Starter Image test');
+    $assert_session->responseContains('Starter Image caption');
   }
 
 }

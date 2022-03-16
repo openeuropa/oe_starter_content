@@ -140,6 +140,8 @@ class EventIntegrationTest extends BrowserTestBase {
     $page->fillField('Introduction', 'Example Event image introduction');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $media_name);
+    $page->fillField('Media item', $media_name);
+    $page->fillField('Caption', 'Starter Image caption');
     $edit = [
       'Country' => 'BE',
     ];
@@ -155,7 +157,7 @@ class EventIntegrationTest extends BrowserTestBase {
 
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
-    $assert_session->responseContains('Starter Image test alt');
+    $assert_session->responseContains('Starter Image caption');
   }
 
 }
