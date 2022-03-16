@@ -157,6 +157,7 @@ class EventIntegrationTest extends BrowserTestBase {
 
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
+    $assert_session->responseContains('Starter Image test alt');
     $assert_session->responseContains('Starter Image caption');
   }
 
