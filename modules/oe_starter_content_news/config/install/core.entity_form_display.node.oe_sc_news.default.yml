@@ -9,6 +9,7 @@ dependencies:
     - node.type.oe_sc_news
   module:
     - datetime
+    - oe_content_featured_media_field
     - text
 id: node.oe_sc_news.default
 targetEntityType: node
@@ -33,7 +34,7 @@ content:
     third_party_settings: {  }
   oe_featured_media:
     type: oe_featured_media_autocomplete
-    weight: 122
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -48,7 +49,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   oe_summary:
-    type: string_textarea
+    type: text_textarea
     weight: 7
     region: content
     settings:

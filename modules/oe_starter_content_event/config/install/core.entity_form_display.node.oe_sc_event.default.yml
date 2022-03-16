@@ -5,13 +5,14 @@ dependencies:
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
-    - field.field.node.oe_sc_event.oe_sc_event_location
     - field.field.node.oe_sc_event.oe_sc_event_dates
+    - field.field.node.oe_sc_event.oe_sc_event_location
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
     - address
     - datetime_range
+    - oe_content_featured_media_field
     - text
 id: node.oe_sc_event.default
 targetEntityType: node
@@ -46,7 +47,7 @@ content:
     third_party_settings: {  }
   oe_featured_media:
     type: oe_featured_media_autocomplete
-    weight: 122
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -54,20 +55,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  oe_sc_event_location:
-    type: address_default
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   oe_sc_event_dates:
     type: daterange_default
     weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
+  oe_sc_event_location:
+    type: address_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   oe_summary:
-    type: string_textarea
+    type: text_textarea
     weight: 7
     region: content
     settings:

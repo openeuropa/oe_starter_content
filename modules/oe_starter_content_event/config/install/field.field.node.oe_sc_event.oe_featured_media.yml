@@ -6,6 +6,8 @@ dependencies:
     - media.type.av_portal_photo
     - media.type.image
     - node.type.oe_sc_event
+  module:
+    - oe_content_featured_media_field
 id: node.oe_sc_event.oe_featured_media
 field_name: oe_featured_media
 entity_type: node
