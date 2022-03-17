@@ -9,6 +9,7 @@ dependencies:
     - node.type.oe_sc_news
   module:
     - datetime
+    - oe_content_featured_media_field
     - text
     - user
 id: node.oe_sc_news.default
@@ -21,21 +22,20 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
   oe_featured_media:
-    type: entity_reference_entity_view
+    type: oe_featured_media_label
     label: above
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 0
     region: content
   oe_publication_date:
     type: datetime_default
@@ -44,14 +44,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 13
+    weight: 3
     region: content
   oe_summary:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 1
     region: content
 hidden:
   oe_content_content_owner: true
