@@ -16,6 +16,7 @@ content:
     weight: 100
     region: content
 hidden:
+  langcode: true
   oe_content_content_owner: true
   oe_content_legacy_link: true
   oe_content_navigation_title: true
