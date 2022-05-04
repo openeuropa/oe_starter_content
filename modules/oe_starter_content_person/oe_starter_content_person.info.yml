@@ -4,4 +4,12 @@ description: A person content type.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
+  - drupal:node
+  - oe_content:oe_content
   - oe_starter_content:oe_starter_content
+
+config_devel:
+  install:
+    - core.entity_form_display.node.oe_sc_person.default
+    - core.entity_view_display.node.oe_sc_person.default
+    - node.type.oe_sc_person
