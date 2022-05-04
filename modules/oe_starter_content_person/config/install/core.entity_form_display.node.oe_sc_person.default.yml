@@ -9,12 +9,14 @@ dependencies:
     - field.field.node.oe_sc_person.oe_sc_person_last_name
     - field.field.node.oe_sc_person.oe_sc_person_occupation
     - field.field.node.oe_sc_person.oe_sc_person_position
+    - field.field.node.oe_sc_person.oe_social_media_links
     - node.type.oe_sc_person
   module:
     - address
     - link
     - rdf_skos
     - text
+    - typed_link
 id: node.oe_sc_person.default
 targetEntityType: node
 bundle: oe_sc_person
@@ -122,6 +124,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  oe_social_media_links:
+    type: typed_link
+    weight: 129
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

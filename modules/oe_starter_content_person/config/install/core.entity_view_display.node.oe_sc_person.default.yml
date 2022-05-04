@@ -9,10 +9,12 @@ dependencies:
     - field.field.node.oe_sc_person.oe_sc_person_last_name
     - field.field.node.oe_sc_person.oe_sc_person_occupation
     - field.field.node.oe_sc_person.oe_sc_person_position
+    - field.field.node.oe_sc_person.oe_social_media_links
     - node.type.oe_sc_person
   module:
     - address
     - text
+    - typed_link
     - user
 id: node.oe_sc_person.default
 targetEntityType: node
@@ -78,6 +80,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 107
+    region: content
+  oe_social_media_links:
+    type: typed_link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 109
     region: content
 hidden:
   langcode: true

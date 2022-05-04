@@ -9,6 +9,7 @@ dependencies:
   - drupal:node
   - drupal:text
   - oe_content:oe_content
+  - oe_content:oe_content_social_media_links_field
   - oe_media:oe_media
   - oe_media:oe_media_avportal
   - oe_starter_content:oe_starter_content
@@ -24,6 +25,7 @@ config_devel:
     - field.field.node.oe_sc_person.oe_sc_person_last_name
     - field.field.node.oe_sc_person.oe_sc_person_occupation
     - field.field.node.oe_sc_person.oe_sc_person_position
+    - field.field.node.oe_sc_person.oe_social_media_links
     - field.storage.node.oe_sc_person_additional_info
     - field.storage.node.oe_sc_person_country
     - field.storage.node.oe_sc_person_first_name
