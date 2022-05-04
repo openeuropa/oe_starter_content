@@ -24,21 +24,21 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 8
     region: content
   oe_sc_person_additional_info:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 6
     region: content
   oe_sc_person_country:
     type: address_country_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 3
     region: content
   oe_sc_person_first_name:
     type: string
@@ -46,7 +46,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 0
     region: content
   oe_sc_person_image:
     type: entity_reference_entity_view
@@ -55,7 +55,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 104
+    weight: 2
     region: content
   oe_sc_person_last_name:
     type: string
@@ -63,7 +63,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 1
     region: content
   oe_sc_person_occupation:
     type: string
@@ -71,7 +71,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 106
+    weight: 4
     region: content
   oe_sc_person_position:
     type: string
@@ -79,7 +79,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 107
+    weight: 5
     region: content
   oe_social_media_links:
     type: typed_link
@@ -91,7 +91,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 109
+    weight: 7
     region: content
 hidden:
   langcode: true
