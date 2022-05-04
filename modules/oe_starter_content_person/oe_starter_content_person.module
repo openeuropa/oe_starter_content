@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Main *.module file.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @see oe_content_person_node_presave()
+ */
+function oe_starter_content_person_node_presave(EntityInterface $entity) {
+  if ($entity->bundle() !== 'oe_sc_person') {
+    return;
+  }
+
+  // Set the node title based on first and last name.
+  $title = $entity->get('oe_sc_person_first_name')->value . ' ' . $entity->get('oe_sc_person_last_name')->value;
+
+  $entity->setTitle($title);
+}
