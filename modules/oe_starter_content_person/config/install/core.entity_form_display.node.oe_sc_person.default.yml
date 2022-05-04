@@ -13,8 +13,6 @@ dependencies:
     - node.type.oe_sc_person
   module:
     - address
-    - link
-    - rdf_skos
     - text
     - typed_link
 id: node.oe_sc_person.default
@@ -24,50 +22,16 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 15
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 13
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  oe_content_content_owner:
-    type: skos_concept_entity_reference_autocomplete
-    weight: 11
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  oe_content_legacy_link:
-    type: link_default
-    weight: 12
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  oe_content_navigation_title:
-    type: string_textfield
-    weight: 10
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  oe_content_short_title:
-    type: string_textfield
     weight: 9
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      include_locked: true
     third_party_settings: {  }
   oe_sc_person_additional_info:
     type: text_textarea
@@ -135,21 +99,21 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 16
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 18
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 17
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -164,7 +128,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -172,4 +136,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
