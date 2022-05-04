@@ -2,10 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.oe_sc_person.oe_sc_person_additional_info
+    - field.field.node.oe_sc_person.oe_sc_person_country
+    - field.field.node.oe_sc_person.oe_sc_person_first_name
+    - field.field.node.oe_sc_person.oe_sc_person_image
+    - field.field.node.oe_sc_person.oe_sc_person_last_name
+    - field.field.node.oe_sc_person.oe_sc_person_occupation
+    - field.field.node.oe_sc_person.oe_sc_person_position
     - node.type.oe_sc_person
   module:
+    - address
     - link
     - rdf_skos
+    - text
 id: node.oe_sc_person.default
 targetEntityType: node
 bundle: oe_sc_person
@@ -53,6 +62,62 @@ content:
   oe_content_short_title:
     type: string_textfield
     weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_additional_info:
+    type: text_textarea
+    weight: 128
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_country:
+    type: address_country_default
+    weight: 125
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  oe_sc_person_first_name:
+    type: string_textfield
+    weight: 122
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_image:
+    type: entity_reference_autocomplete
+    weight: 124
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_last_name:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_occupation:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_person_position:
+    type: string_textfield
+    weight: 127
     region: content
     settings:
       size: 60
