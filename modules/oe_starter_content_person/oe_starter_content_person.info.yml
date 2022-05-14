@@ -1,6 +1,6 @@
 name: OpenEuropa Starter Content Person
 type: module
-description: A person content type.
+description: Contains the Person content type.
 core_version_requirement: ^9.2
 package: OpenEuropa Starter Content
 dependencies:
