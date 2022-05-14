@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Main *.module file.
+ * The module file.
  */
 
 declare(strict_types = 1);
