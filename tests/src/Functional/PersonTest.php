@@ -33,9 +33,9 @@ class PersonTest extends BrowserTestBase {
   protected $defaultTheme = 'stark';
 
   /**
-   * Creation of an Event content through the UI.
+   * Tests the creation of Person content through the UI.
    */
-  public function testCreateEvent(): void {
+  public function testCreatePerson(): void {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
