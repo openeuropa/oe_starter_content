@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * The module file.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * @see oe_content_person_form_node_form_alter()
+ */
+function oe_starter_content_person_form_node_form_alter(array &$form, FormStateInterface $form_state): void {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $form_state->getBuildInfo()['callback_object']->getEntity();
+
+  if ($node->bundle() !== 'oe_sc_person') {
+    return;
+  }
+
+  // Hide the title field, as we auto-generate it based on the first and last
+  // name.
+  // This is done programmatically, not through configuration.
+  // When this module is disabled for some reason, both this hook and the
+  // presave hook will no longer fire, but the configuration will remain.
+  $form['title']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @see oe_content_person_node_presave()
+ */
+function oe_starter_content_person_node_presave(EntityInterface $entity): void {
+  if ($entity->bundle() !== 'oe_sc_person') {
+    return;
+  }
+
+  // Set the node title based on first and last name.
+  $title = $entity->get('oe_sc_person_first_name')->value . ' ' . $entity->get('oe_sc_person_last_name')->value;
+
+  $entity->setTitle($title);
+}

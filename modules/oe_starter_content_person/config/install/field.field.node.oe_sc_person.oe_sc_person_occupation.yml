@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_person_occupation
+    - node.type.oe_sc_person
+id: node.oe_sc_person.oe_sc_person_occupation
+field_name: oe_sc_person_occupation
+entity_type: node
+bundle: oe_sc_person
+label: Occupation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

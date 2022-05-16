@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_person_image
+    - media.type.av_portal_photo
+    - media.type.image
+    - node.type.oe_sc_person
+id: node.oe_sc_person.oe_sc_person_image
+field_name: oe_sc_person_image
+entity_type: node
+bundle: oe_sc_person
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      av_portal_photo: av_portal_photo
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: av_portal_photo
+field_type: entity_reference

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_person_country
+    - node.type.oe_sc_person
+  module:
+    - address
+id: node.oe_sc_person.oe_sc_person_country
+field_name: oe_sc_person_country
+entity_type: node
+bundle: oe_sc_person
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country
