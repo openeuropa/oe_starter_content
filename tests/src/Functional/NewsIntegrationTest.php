@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_starter_content\Functional;
 
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\media\Entity\Media;
@@ -53,6 +55,7 @@ class NewsIntegrationTest extends BrowserTestBase {
    */
   public function testCreateNews() {
     $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
 
     // Create a sample media entity to be embedded.
     File::create([
@@ -73,7 +76,6 @@ class NewsIntegrationTest extends BrowserTestBase {
 
     // Create a News item.
     $this->drupalGet('node/add/oe_sc_news');
-    $page = $this->getSession()->getPage();
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
@@ -91,6 +93,16 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('01/24/2022');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image caption');
+
+    // Assert publication date is current date if it's not fulfilled.
+    $this->drupalGet('node/1/edit');
+    $page->fillField('Date', '');
+    $page->pressButton('Save');
+
+    $assert_session->pageTextContains(DrupalDateTime::createFromTimestamp(
+      \Drupal::time()->getRequestTime(),
+      DateTimeItemInterface::STORAGE_TIMEZONE
+    )->format('D, m/d/Y'));
   }
 
 }
