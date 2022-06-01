@@ -79,30 +79,30 @@ class NewsIntegrationTest extends BrowserTestBase {
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
-    $page->fillField('Date', '2022-01-24');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('Media item', $media_name);
     $page->fillField('Caption', 'Starter Image caption');
     $page->pressButton('Save');
 
-    // Assert media document has been created.
+    // Assert media document has been created and publication date
+    // is current date because it's not fulfilled.
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
-    $assert_session->pageTextContains('01/24/2022');
-    $assert_session->responseContains('Starter Image test');
-    $assert_session->responseContains('Starter Image caption');
-
-    // Assert publication date is current date if it's not fulfilled.
-    $this->drupalGet('node/1/edit');
-    $page->fillField('Date', '');
-    $page->pressButton('Save');
-
     $assert_session->pageTextContains(DrupalDateTime::createFromTimestamp(
       \Drupal::time()->getRequestTime(),
       DateTimeItemInterface::STORAGE_TIMEZONE
-    )->format('D, m/d/Y'));
+    )->format('m/d/Y'));
+    $assert_session->responseContains('Starter Image test');
+    $assert_session->responseContains('Starter Image caption');
+
+    // Assert publication date when fulfilled.
+    $this->drupalGet('node/1/edit');
+    $page->fillField('Date', '2022-01-24');
+    $page->pressButton('Save');
+
+    $assert_session->pageTextContains('01/24/2022');
   }
 
 }
