@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_starter_content\Functional;
 
-use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\media\Entity\Media;
@@ -84,20 +82,19 @@ class NewsIntegrationTest extends BrowserTestBase {
     $page->fillField('Caption', 'Starter Image caption');
     $page->pressButton('Save');
 
-    // Assert media document has been created and publication date
-    // is current date because it's not fulfilled.
+    // Assert that news was created with the expected field values.
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
-    $assert_session->pageTextContains(DrupalDateTime::createFromTimestamp(
-      \Drupal::time()->getRequestTime(),
-      DateTimeItemInterface::STORAGE_TIMEZONE
-    )->format('m/d/Y'));
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image caption');
+    // Assert that publication date was filled with a default value.
+    $publication_date = $page->find('css', 'time');
+    $publication_date->hasAttribute('datetime');
+    $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
 
-    // Assert publication date when fulfilled.
+    // Set a custom publication date.
     $this->drupalGet('node/1/edit');
     $page->fillField('Date', '2022-01-24');
     $page->pressButton('Save');
