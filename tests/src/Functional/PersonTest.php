@@ -5,7 +5,9 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_starter_content\Functional;
 
 use Drupal\file\Entity\File;
+use Drupal\file\FileInterface;
 use Drupal\media\Entity\Media;
+use Drupal\media\MediaInterface;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\TestFileCreationTrait;
@@ -39,24 +41,6 @@ class PersonTest extends BrowserTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // Create an image entity to be embedded.
-    $image_file = File::create([
-      'uri' => $this->getTestFiles('image')[0]->uri,
-    ]);
-    $image_file->save();
-    $image_media = Media::create([
-      'bundle' => 'image',
-      'name' => 'Example image',
-      'oe_media_image' => [
-        [
-          'target_id' => $image_file->id(),
-          'alt' => 'Image alt',
-          'title' => 'Image title',
-        ],
-      ],
-    ]);
-    $image_media->save();
-
     // Login with permission to create person content.
     $user = $this->drupalCreateUser([
       'create oe_sc_person content',
@@ -85,6 +69,7 @@ class PersonTest extends BrowserTestBase {
     $this->drupalGet('node/add/oe_sc_person');
     $page->fillField('First name', 'Sherlock');
     $page->fillField('Last name', 'Holmes');
+    $image_media = $this->createImageMedia();
     $page->fillField(
       'Use existing media',
       $image_media->label() . ' (' . $image_media->id() . ')',
@@ -116,8 +101,8 @@ class PersonTest extends BrowserTestBase {
     // All fields should be visible to anonymous.
     $assert_session->elementTextEquals('css', 'h1', 'Sherlock Holmes');
     $image = $assert_session->elementExists('css', 'article img');
-    $this->assertSame('Image alt', $image->getAttribute('alt'));
-    $this->assertSame('Image title', $image->getAttribute('title'));
+    $this->assertSame('Example image alt', $image->getAttribute('alt'));
+    $this->assertSame('Example image title', $image->getAttribute('title'));
     $this->assertStringContainsString('image-test.png', $image->getAttribute('src'));
     $assert_session->pageTextContains('United Kingdom');
     $assert_session->pageTextContains('Private investigator');
@@ -125,6 +110,48 @@ class PersonTest extends BrowserTestBase {
     $assert_session->responseContains('<p>Rates can be negotiated.</p>');
     $assert_session->responseContains('<p>Do not stand below the window.</p>');
     $assert_session->responseContains('<a href="https://example.com/">Follow the crime stories</a>Twitter');
+  }
+
+  /**
+   * Creates an image media entity.
+   *
+   * @param string|null $name
+   *   Base part of the name/title.
+   *
+   * @return \Drupal\media\MediaInterface
+   *   The media entity.
+   */
+  protected function createImageMedia(string $name = 'Example image'): MediaInterface {
+    $media = Media::create([
+      'bundle' => 'image',
+      'name' => "$name name",
+      'oe_media_image' => [
+        [
+          'target_id' => $this->createFileEntity('image')->id(),
+          'alt' => "$name alt",
+          'title' => "$name title",
+        ],
+      ],
+    ]);
+    $media->save();
+    return $media;
+  }
+
+  /**
+   * Creates a file entity.
+   *
+   * @param string $type
+   *   File type, e.g. 'text' or 'image'.
+   *
+   * @return \Drupal\file\FileInterface
+   *   The file entity.
+   */
+  protected function createFileEntity(string $type): FileInterface {
+    $file_entity = File::create([
+      'uri' => $this->getTestFiles($type)[0]->uri,
+    ]);
+    $file_entity->save();
+    return $file_entity;
   }
 
 }
