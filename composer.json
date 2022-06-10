@@ -50,6 +50,11 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
+        "patches": {
+            "openeuropa/oe_content": {
+                "OEL-1550: Make oe_content_publication optional in oe_content_sub_entity_document_reference": "https://github.com/openeuropa/oe_content/compare/3.x..OEL-1551.diff"
+            }
+        },
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
