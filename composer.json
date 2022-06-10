@@ -8,6 +8,7 @@
     "require": {
         "php": ">=7.4",
         "drupal/address": "^1.10",
+        "drupal/composite_reference": "^2.1",
         "drupal/core": "^9.2",
         "openeuropa/oe_media": "^1.14"
     },
