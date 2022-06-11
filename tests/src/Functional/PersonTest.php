@@ -81,6 +81,34 @@ class PersonTest extends BrowserTestBase {
     $page->fillField('oe_social_media_links[0][uri]', 'https://example.com/');
     $page->fillField('oe_social_media_links[0][title]', 'Follow the crime stories');
     $page->selectFieldOption('oe_social_media_links[0][link_type]', 'Twitter');
+    // Find the documents field group.
+    $documents_section = $page->find('css', '#edit-oe-sc-person-documents');
+    // Add a single documents.
+    $documents_section->selectFieldOption('oe_sc_person_documents[actions][bundle]', 'Document');
+    $documents_section->pressButton('Add new document reference');
+    $document = $this->createDocumentMedia(NULL, 0);
+    $documents_section->fillField(
+      'Use existing media',
+      $document->label() . ' (' . $document->id() . ')',
+    );
+    $documents_section->pressButton('Create document reference');
+    // Add a document group.
+    $documents_section->selectFieldOption('oe_sc_person_documents[actions][bundle]', 'Document group');
+    $documents_section->pressButton('Add new document reference');
+    $documents_group_section = $documents_section->find('css', '#edit-oe-sc-person-documents-form');
+    $documents_group_section->fillField('Title', 'Example documents group');
+    $document = $this->createDocumentMedia(NULL, 1);
+    $documents_group_section->fillField(
+      'oe_sc_person_documents[form][1][oe_documents][0][target_id]',
+      $document->label() . ' (' . $document->id() . ')',
+    );
+    $documents_group_section->pressButton('Add another item');
+    $document = $this->createDocumentMedia(NULL, 2);
+    $documents_group_section->fillField(
+      'oe_sc_person_documents[form][1][oe_documents][1][target_id]',
+      $document->label() . ' (' . $document->id() . ')',
+    );
+    $documents_section->pressButton('Create document reference');
     $page->pressButton('Save');
 
     // Assert contents of the Person detail page.
@@ -106,6 +134,23 @@ class PersonTest extends BrowserTestBase {
     $assert_session->responseContains('<p>Rates can be negotiated.</p>');
     $assert_session->responseContains('<p>Do not stand below the window.</p>');
     $assert_session->responseContains('<a href="https://example.com/">Follow the crime stories</a>Twitter');
+    $assert_session->pageTextContains('Example documents group');
+    $this->assertLinkHrefContains('text-0.txt', 'files/text-0.txt');
+    $this->assertLinkHrefContains('text-1.txt', 'files/text-1.txt');
+    $this->assertLinkHrefContains('text-2.txt', 'files/text-2.txt');
+  }
+
+  /**
+   * Asserts a link by its link text and a part of its href attribute.
+   *
+   * @param string $text
+   *   Expected link text.
+   * @param string $href_part
+   *   Part of the expected href attribute.
+   */
+  protected function assertLinkHrefContains(string $text, string $href_part): void {
+    $link = $this->assertSession()->elementExists('named', ['link', $text]);
+    $this->assertStringContainsString($href_part, $link->getAttribute('href'));
   }
 
 }

@@ -43,17 +43,49 @@ trait ExampleMediaTrait {
   }
 
   /**
+   * Creates a document media entity.
+   *
+   * @param string|null $name
+   *   Base part of the name/title.
+   * @param int|null $index
+   *   Index for the file entity.
+   *
+   * @return \Drupal\media\MediaInterface
+   *   The media entity.
+   */
+  protected function createDocumentMedia(string $name = NULL, int $index = NULL): MediaInterface {
+    $name = $name ?? 'Example document' . (($index !== NULL) ? ' ' . $index : '');
+    $media = Media::create([
+      'bundle' => 'document',
+      'oe_media_file_type' => 'local',
+      'name' => "$name name",
+      'oe_media_file' => [
+        'target_id' => $this->createFileEntity('text', $index ?? 0)->id(),
+        'title' => "$name title",
+      ],
+    ]);
+    $media->save();
+    return $media;
+  }
+
+  /**
    * Creates a file entity.
    *
    * @param string $type
    *   File type, e.g. 'text' or 'image'.
+   * @param int $index
+   *   Index to distinguish from other files of the same type.
+   *   This is limited by the number of files returned from ->getTestFiles().
    *
    * @return \Drupal\file\FileInterface
    *   The file entity.
    */
-  protected function createFileEntity(string $type): FileInterface {
+  protected function createFileEntity(string $type, int $index = 0): FileInterface {
+    /** @var object[] $files */
+    $files = $this->getTestFiles($type);
+    $this->assertArrayHasKey($index, $files);
     $file_entity = File::create([
-      'uri' => $this->getTestFiles($type)[0]->uri,
+      'uri' => $files[$index]->uri,
     ]);
     $file_entity->save();
     return $file_entity;
