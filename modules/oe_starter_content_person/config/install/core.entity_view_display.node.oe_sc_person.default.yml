@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_sc_person_country
+    - field.field.node.oe_sc_person.oe_sc_person_documents
     - field.field.node.oe_sc_person.oe_sc_person_first_name
     - field.field.node.oe_sc_person.oe_sc_person_image
     - field.field.node.oe_sc_person.oe_sc_person_last_name
@@ -39,6 +40,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  oe_sc_person_documents:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   oe_sc_person_first_name:
     type: string
