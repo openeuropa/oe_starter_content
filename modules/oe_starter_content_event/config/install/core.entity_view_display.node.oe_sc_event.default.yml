@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.oe_sc_event_registration_url
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
@@ -13,6 +14,7 @@ dependencies:
     - address
     - datetime_range
     - oe_content_featured_media_field
+    - oe_starter_content_event
     - text
     - user
 id: node.oe_sc_event.default
@@ -26,6 +28,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  oe_sc_event_registration_url:
+    type: event_link_external
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   links:
     settings: {  }

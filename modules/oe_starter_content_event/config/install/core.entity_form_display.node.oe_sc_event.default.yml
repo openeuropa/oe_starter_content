@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
     - field.field.node.oe_sc_event.oe_sc_event_location
+    - field.field.node.oe_sc_event.oe_sc_event_registration_url
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
     - address
     - datetime_range
+    - link
     - oe_content_featured_media_field
     - text
 id: node.oe_sc_event.default
@@ -66,6 +68,14 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  oe_sc_event_registration_url:
+    type: link_default
+    weight: 12
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   oe_summary:
     type: text_textarea
