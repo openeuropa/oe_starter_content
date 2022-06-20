@@ -72,11 +72,11 @@ content:
     type: event_link_external
     label: above
     settings:
-      trim_length: '80'
-      url_only: ''
-      url_plain: ''
-      rel: ''
-      target: ''
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 7
     region: content
