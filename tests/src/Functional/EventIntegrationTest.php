@@ -101,6 +101,7 @@ class EventIntegrationTest extends BrowserTestBase {
     $page->fillField('Title', 'Example Event title');
     $page->fillField('Content', 'Example Event content');
     $page->fillField('Introduction', 'Example Event introduction');
+    $page->fillField('Registration URL', 'https://europa.eu');
     $media_name = $media_document->getName() . ' (' . $media_document->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $media_name);
     $edit = [
@@ -132,12 +133,15 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->responseContains('text-0.txt');
     $assert_session->pageTextContains('Sat, 01/22/2022 - 02:12');
     $assert_session->pageTextContains('Thu, 02/24/2022 - 20:00');
+    $assert_session->pageTextContains('https://europa.eu');
+    $assert_session->elementExists('css', 'div > a[target="_blank"]');
 
-    // Create an event with image.
+    // Create an event with image and internal registration URL.
     $this->drupalGet('node/add/oe_sc_event');
     $page->fillField('Title', 'Example Event image title');
     $page->fillField('Content', 'Example Event image content');
     $page->fillField('Introduction', 'Example Event image introduction');
+
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $media_name);
     $page->fillField('Media item', $media_name);
@@ -153,12 +157,14 @@ class EventIntegrationTest extends BrowserTestBase {
     $page->fillField('oe_sc_event_dates[0][value][time]', '02:12:22');
     $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-02-24');
     $page->fillField('oe_sc_event_dates[0][end_value][time]', '20:00:00');
+    $page->fillField('Registration URL', 'Example Event title  (1)');
     $page->pressButton('Save');
 
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
     $assert_session->responseContains('Starter Image caption');
+    $assert_session->elementNotExists('css', 'div > a[target="_blank"]');
   }
 
 }
