@@ -24,7 +24,7 @@
         "drush/drush": "^10.3",
         "egulias/email-validator": "^2.1.22 || ^3.0",
         "openeuropa/code-review": "^1.6 || ^2.0",
-        "openeuropa/oe_content": "^2.8.0",
+        "openeuropa/oe_content": "dev-OEL-1551",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
         "phpspec/prophecy-phpunit": "^1 || ^2"
     },
@@ -51,11 +51,6 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
-        "patches": {
-            "openeuropa/oe_content": {
-                "OEL-1550: Make oe_content_publication optional in oe_content_sub_entity_document_reference": "https://github.com/openeuropa/oe_content/compare/3.x..OEL-1551.diff"
-            }
-        },
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
