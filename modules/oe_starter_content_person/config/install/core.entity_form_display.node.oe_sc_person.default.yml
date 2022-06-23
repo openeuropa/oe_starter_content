@@ -62,10 +62,10 @@ content:
       allow_existing: false
       match_operator: CONTAINS
       allow_duplicate: false
-      collapsible: false
+      collapsible: true
       collapsed: false
-      revision: false
-      removed_reference: delete
+      revision: true
+      removed_reference: keep
     third_party_settings: {  }
   oe_sc_person_first_name:
     type: string_textfield
