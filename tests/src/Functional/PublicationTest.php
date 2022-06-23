@@ -84,38 +84,37 @@ class PublicationTest extends BrowserTestBase {
     $page->pressButton('Save');
     // The node is not saved.
     $assert_session->elementTextEquals('css', 'h1', 'Create Publication');
-    $assert_session->elementsCount('css', 'input.error', 1);
+    $assert_session->elementsCount('css', 'input.error', 2);
     $assert_session->pageTextContains('Title field is required.');
 
     // Create a publication with minimal required values.
     $this->drupalGet('node/add/oe_sc_publication');
-    $page->fillField('Title', 'Lorem Ipsum Dolor Sit Amet');
+    $page->fillField('Title', 'Publication page');
+    $page->fillField(
+      'edit-oe-documents-0-target-id',
+      $document_media->label() . ' (' . $document_media->id() . ')',
+    );
     $page->pressButton('Save');
 
     // Assert only the required fields.
-    $assert_session->elementTextEquals('css', 'h1', 'Lorem Ipsum Dolor Sit Amet');
+    $assert_session->elementTextEquals('css', 'h1', 'Publication page');
     $assert_session->elementExists('css', 'time');
 
     // Create a publication with all values filled in.
     $this->drupalGet('node/add/oe_sc_publication');
 
-    ini_set('xdebug.var_display_max_depth', '10');
-    ini_set('xdebug.var_display_max_children', '256');
-    ini_set('xdebug.var_display_max_data', '100024');
-    var_dump($page->getHtml());
-
-    $page->fillField('Title', 'Fusce commodo aliquam arcu');
+    $page->fillField('Title', 'Example publication page');
     $page->fillField(
       'edit-oe-featured-media-0-featured-media-target-id',
       $image_media->label() . ' (' . $image_media->id() . ')',
     );
     $page->fillField('Caption', 'Example Image caption');
     $page->fillField('Reference code', '123456');
-    $page->fillField('Short description', 'Fusce a quam. Fusce vel dui. Suspendisse nisl elit, rhoncus eget.');
+    $page->fillField('Short description', 'This is a publication short description.');
     $page->fillField(
       'Long description',
       // Line breaks should turn into paragraphs.
-      "Aliquam lobortis. Vestibulum facilisis, purus nec pulvinar iaculis vitae euismod ligula urna in dolor.\n\nDonec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Donec vitae sapien ut libero venenatis faucibus.",
+      "This is a publication body with end on lines.\n\nSecond paragraph of the publication body with end on lines.",
     );
     $page->fillField('Date', '2022-06-22');
     $page->fillField(
@@ -125,27 +124,26 @@ class PublicationTest extends BrowserTestBase {
     $page->pressButton('Save');
 
     // Assert contents of the Publication detail page.
-    $assert_session->pageTextContains('Publication Fusce commodo aliquam arcu has been created.');
-    $assert_session->elementTextEquals('css', 'h1', 'Fusce commodo aliquam arcu');
+    $assert_session->pageTextContains('Publication Example publication page has been created.');
+    $assert_session->elementTextEquals('css', 'h1', 'Example publication page');
 
-    $url = $this->getUrl();
-    $nid = basename($url);
+    $node = $this->getNodeByTitle('Example publication page');
 
     // Visit the same page as anonymous user.
     $this->drupalLogout();
-    $this->drupalGet('/node/' . $nid);
+    $this->drupalGet('/node/' . $node->id());
 
     // All fields should be visible to anonymous.
-    $assert_session->elementTextEquals('css', 'h1', 'Fusce commodo aliquam arcu');
+    $assert_session->elementTextEquals('css', 'h1', 'Example publication page');
     $assert_session->responseContains('Example image');
     $assert_session->responseContains('Example Image caption');
     $assert_session->pageTextContains('123456');
-    $assert_session->pageTextContains('Fusce a quam. Fusce vel dui. Suspendisse nisl elit, rhoncus eget.');
-    $assert_session->responseContains('<p>Aliquam lobortis. Vestibulum facilisis, purus nec pulvinar iaculis vitae euismod ligula urna in dolor.</p>');
-    $assert_session->responseContains('<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Donec vitae sapien ut libero venenatis faucibus.</p>');
+    $assert_session->pageTextContains('This is a publication short description.');
+    $assert_session->responseContains('<p>This is a publication body with end on lines.</p>');
+    $assert_session->responseContains('<p>Second paragraph of the publication body with end on lines.</p>');
     $publication_date = $page->find('css', 'time');
     $publication_date->hasAttribute('datetime');
-    $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
+    $assert_session->responseContains('Wed, 06/22/2022');
     $assert_session->responseContains($document_file->getFilename());
   }
 
