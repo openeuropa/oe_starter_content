@@ -134,7 +134,7 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Sat, 01/22/2022 - 02:12');
     $assert_session->pageTextContains('Thu, 02/24/2022 - 20:00');
     $assert_session->pageTextContains('https://europa.eu');
-    $assert_session->elementExists('css', 'div > a[target="_blank"]');
+    $assert_session->elementExists('css', 'div > a[href="https://europa.eu"]');
 
     // Create an event with image and internal registration URL.
     $this->drupalGet('node/add/oe_sc_event');
@@ -164,7 +164,7 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
     $assert_session->responseContains('Starter Image caption');
-    $assert_session->elementNotExists('css', 'div > a[target="_blank"]');
+    $assert_session->elementNotExists('css', 'div > a[href="https://europa.eu"]');
   }
 
 }
