@@ -10,7 +10,7 @@ dependencies:
   - drupal:text
   - oe_content:oe_content
   - oe_content:oe_content_social_media_links_field
-  - oe_content:oe_content_sub_entity_document_reference
+  - oe_content:oe_content_sub_entity_document_reference_group
   - oe_media:oe_media
   - oe_media:oe_media_avportal
   - oe_starter_content:oe_starter_content
