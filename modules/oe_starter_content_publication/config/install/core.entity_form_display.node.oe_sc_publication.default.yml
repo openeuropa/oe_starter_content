@@ -34,6 +34,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  oe_sc_publication_document:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   oe_featured_media:
     type: oe_featured_media_autocomplete
     weight: 1
@@ -55,16 +65,6 @@ content:
     weight: 2
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  oe_sc_publication_document:
-    type: oe_featured_media_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
