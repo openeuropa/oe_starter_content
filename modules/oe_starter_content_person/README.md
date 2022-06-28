@@ -7,6 +7,6 @@ Before enabling this module, make sure that the following modules are present in
 
 ```json
 "require": {
-    "drupal/composite_reference": "~1.0-alpha2"
+  "drupal/composite_reference": "^2.1"
 }
 ```
