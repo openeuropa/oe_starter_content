@@ -84,17 +84,17 @@ class PublicationTest extends BrowserTestBase {
     $page->pressButton('Save');
     // The node is not saved.
     $assert_session->elementTextEquals('css', 'h1', 'Create Publication');
-    $assert_session->elementsCount('css', 'input.error', 3);
+    $assert_session->elementsCount('css', 'input.error', 2);
     $assert_session->pageTextContains('Title field is required.');
+    $assert_session->pageTextContains('Use existing media field is required.');
 
     // Create a publication with minimal required values.
     $this->drupalGet('node/add/oe_sc_publication');
     $page->fillField('Title', 'Publication page');
     $page->fillField(
-      'edit-oe-sc-publication-document-0-featured-media-target-id',
+      'Use existing media',
       $document_media->label() . ' (' . $document_media->id() . ')',
     );
-    $page->fillField('edit-oe-sc-publication-document-0-featured-media-caption', 'Example document caption');
     $page->pressButton('Save');
 
     // Assert only the required fields.
@@ -108,7 +108,7 @@ class PublicationTest extends BrowserTestBase {
 
     $page->fillField('Title', 'Example publication page');
     $page->fillField(
-      'edit-oe-featured-media-0-featured-media-target-id',
+      'Media item',
       $image_media->label() . ' (' . $image_media->id() . ')',
     );
     $page->fillField('Caption', 'Example Image caption');
@@ -121,10 +121,9 @@ class PublicationTest extends BrowserTestBase {
     );
     $page->fillField('Date', '2022-06-22');
     $page->fillField(
-      'edit-oe-sc-publication-document-0-featured-media-target-id',
+      'Use existing media',
       $document_media->label() . ' (' . $document_media->id() . ')',
     );
-    $page->fillField('edit-oe-sc-publication-document-0-featured-media-caption', 'Document Caption Example');
     $page->pressButton('Save');
 
     // Assert contents of the Publication detail page.
@@ -135,7 +134,7 @@ class PublicationTest extends BrowserTestBase {
 
     // Visit the same page as anonymous user.
     $this->drupalLogout();
-    $this->drupalGet('/node/' . $node->id());
+    $this->drupalGet($node->toUrl());
 
     // All fields should be visible to anonymous.
     $assert_session->elementTextEquals('css', 'h1', 'Example publication page');
@@ -145,8 +144,7 @@ class PublicationTest extends BrowserTestBase {
     $assert_session->pageTextContains('This is a publication short description.');
     $assert_session->responseContains('<p>This is a publication body with end on lines.</p>');
     $assert_session->responseContains('<p>Second paragraph of the publication body with end on lines.</p>');
-    $assert_session->responseContains('Example document');
-    $assert_session->responseContains('Document Caption Example');
+    $assert_session->responseContains($document_file->getFilename());
     $assert_session->responseContains('Wed, 06/22/2022');
   }
 
