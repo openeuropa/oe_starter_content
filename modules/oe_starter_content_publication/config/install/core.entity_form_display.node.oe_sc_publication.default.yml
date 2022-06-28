@@ -3,10 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_sc_publication.body
-    - field.field.node.oe_sc_publication.oe_documents
     - field.field.node.oe_sc_publication.oe_featured_media
     - field.field.node.oe_sc_publication.oe_publication_date
     - field.field.node.oe_sc_publication.oe_reference_code
+    - field.field.node.oe_sc_publication.oe_sc_publication_document
     - field.field.node.oe_sc_publication.oe_summary
     - node.type.oe_sc_publication
   module:
@@ -34,16 +34,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  oe_documents:
-    type: entity_reference_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   oe_featured_media:
     type: oe_featured_media_autocomplete
     weight: 1
@@ -65,6 +55,16 @@ content:
     weight: 2
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_publication_document:
+    type: oe_featured_media_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
