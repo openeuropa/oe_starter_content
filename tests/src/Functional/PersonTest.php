@@ -69,6 +69,11 @@ class PersonTest extends BrowserTestBase {
     $page->fillField('Last name', 'Holmes');
     $image_media = $this->createImageMedia();
     $page->fillField(
+      'Short description',
+      // Line breaks should turn into paragraphs.
+      "Consulting Detective.\n\nElementary, my dear Watson.",
+    );
+    $page->fillField(
       'Use existing media',
       $image_media->label() . ' (' . $image_media->id() . ')',
     );
@@ -117,18 +122,19 @@ class PersonTest extends BrowserTestBase {
     $assert_session->pageTextContains('Person Sherlock Holmes has been created.');
     $assert_session->elementTextEquals('css', 'h1', 'Sherlock Holmes');
 
-    $url = $this->getUrl();
-    $nid = basename($url);
+    $node = $this->drupalGetNodeByTitle('Sherlock Holmes');
 
     // Visit the same page as anonymous user.
     $this->drupalLogout();
-    $this->drupalGet('/node/' . $nid);
+    $this->drupalGet($node->toUrl());
 
     // All fields should be visible to anonymous.
     $assert_session->elementTextEquals('css', 'h1', 'Sherlock Holmes');
     $image = $assert_session->elementExists('css', 'article img');
     $this->assertSame('Example image alt', $image->getAttribute('alt'));
     $this->assertSame('Example image title', $image->getAttribute('title'));
+    $assert_session->responseContains('<p>Consulting Detective.</p>');
+    $assert_session->responseContains('<p>Elementary, my dear Watson.</p>');
     $this->assertStringContainsString('image-test.png', $image->getAttribute('src'));
     $assert_session->pageTextContains('United Kingdom');
     $assert_session->pageTextContains('Private investigator');
