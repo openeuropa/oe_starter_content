@@ -50,18 +50,28 @@ class PersonTest extends BrowserTestBase {
     $page->pressButton('Save');
     // The node is not saved.
     $assert_session->elementTextEquals('css', 'h1', 'Create Person');
-    $assert_session->elementsCount('css', 'input.error', 2);
+    $assert_session->elementsCount('css', 'input.error', 4);
     $assert_session->pageTextContains('First name field is required.');
     $assert_session->pageTextContains('Last name field is required.');
+    $assert_session->pageTextContains('Occupation field is required.');
+    $assert_session->pageTextContains('Position field is required.');
+    // Required select does not have an empty option.
+    $country_field = $assert_session->selectExists('Country');
+    $this->assertTrue($country_field->hasClass('required'));
 
     // Create a person with minimal required values.
     $this->drupalGet('node/add/oe_sc_person');
     $page->fillField('First name', 'Jane');
     $page->fillField('Last name', 'Smith');
+    $page->fillField('Occupation', 'Economist');
+    $page->fillField('Position', 'Accountant');
     $page->pressButton('Save');
 
     // Assert only the page title.
     $assert_session->elementTextEquals('css', 'h1', 'Jane Smith');
+    $assert_session->pageTextContains('Economist');
+    $assert_session->pageTextContains('Accountant');
+    $assert_session->pageTextContains('Afghanistan');
 
     // Create a person with all values filled in.
     $this->drupalGet('node/add/oe_sc_person');
