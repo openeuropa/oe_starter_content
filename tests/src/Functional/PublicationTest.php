@@ -101,7 +101,7 @@ class PublicationTest extends BrowserTestBase {
     $assert_session->elementTextEquals('css', 'h1', 'Publication page');
     $publication_date = $page->find('css', 'time');
     $publication_date->hasAttribute('datetime');
-    $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
+    $this->assertMatchesRegularExpression("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $publication_date->getText());
 
     // Create a publication with all values filled in.
     $this->drupalGet('node/add/oe_sc_publication');
@@ -145,7 +145,7 @@ class PublicationTest extends BrowserTestBase {
     $assert_session->responseContains('<p>This is a publication body with end on lines.</p>');
     $assert_session->responseContains('<p>Second paragraph of the publication body with end on lines.</p>');
     $assert_session->responseContains($document_file->getFilename());
-    $assert_session->responseContains('Wed, 06/22/2022');
+    $assert_session->responseContains('2022-06-22');
   }
 
 }
