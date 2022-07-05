@@ -96,12 +96,13 @@ class PublicationTest extends BrowserTestBase {
       $document_media->label() . ' (' . $document_media->id() . ')',
     );
     $page->pressButton('Save');
+    $expected_publication_date = date('Y-m-d');
 
     // Assert only the required fields.
     $assert_session->elementTextEquals('css', 'h1', 'Publication page');
     $publication_date = $page->find('css', 'time');
     $publication_date->hasAttribute('datetime');
-    $this->assertMatchesRegularExpression("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $publication_date->getText());
+    $this->assertSame($expected_publication_date, $publication_date->getText());
 
     // Create a publication with all values filled in.
     $this->drupalGet('node/add/oe_sc_publication');
