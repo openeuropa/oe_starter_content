@@ -5,8 +5,17 @@ package: OpenEuropa
 type: module
 core_version_requirement: ^9.2
 dependencies:
+  - allowed_formats:allowed_formats
   - drupal:content_moderation
   - drupal:datetime_timezone
+  - drupal:menu_ui
+  - drupal:path
+  - entity_reference_revisions:entity_reference_revisions
+  - field_group:field_group
+  - oe_content:oe_content_documents_field
+  - oe_content:oe_content_reference_code_field
+  - oe_content:oe_content_sub_entity_document_reference_group
+  - oe_media:oe_media_avportal
 
 config_devel:
   install:
