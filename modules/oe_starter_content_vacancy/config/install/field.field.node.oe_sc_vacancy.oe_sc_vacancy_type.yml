@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_vacancy_type
+    - node.type.oe_sc_vacancy
+  module:
+    - rdf_skos
+id: node.oe_sc_vacancy.oe_sc_vacancy_type
+field_name: oe_sc_vacancy_type
+entity_type: node
+bundle: oe_sc_vacancy
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:skos_concept'
+  handler_settings: {  }
+field_type: skos_concept_entity_reference

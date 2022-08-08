@@ -1,0 +1,31 @@
+name: OpenEuropa Starter Vacancy
+description: The OpenEuropa Vacancies allows creation and management of vacancies with configurable options.
+package: OpenEuropa
+
+type: module
+core_version_requirement: ^9.2
+dependencies:
+  - drupal:content_moderation
+  - drupal:datetime_timezone
+
+config_devel:
+  install:
+    - core.entity_form_display.node.oe_sc_vacancy.default
+    - core.entity_view_display.node.oe_sc_vacancy.default
+    - field.field.node.oe_sc_vacancy.body
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_application_url
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_closing_date
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_grade
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_opening_date
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_status
+    - field.field.node.oe_sc_vacancy.oe_sc_vacancy_type
+    - field.field.node.oe_sc_vacancy.oe_documents
+    - field.field.node.oe_sc_vacancy.oe_reference_code
+    - field.field.node.oe_sc_vacancy.oe_summary
+    - field.storage.node.oe_sc_vacancy_application_url
+    - field.storage.node.oe_sc_vacancy_closing_date
+    - field.storage.node.oe_sc_vacancy_grade
+    - field.storage.node.oe_sc_vacancy_opening_date
+    - field.storage.node.oe_sc_vacancy_status
+    - field.storage.node.oe_sc_vacancy_type
+    - node.type.oe_sc_vacancy
