@@ -15,7 +15,7 @@ dependencies:
     - node.type.oe_sc_vacancy
   module:
     - content_moderation
-    - datetime_timezone
+    - datetime
     - link
     - path
     - rdf_skos
@@ -50,7 +50,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   oe_sc_vacancy_closing_date:
-    type: datetime_timezone
+    type: datetime_default
     weight: 131
     region: content
     settings: {  }
@@ -66,7 +66,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   oe_sc_vacancy_opening_date:
-    type: datetime_timezone
+    type: datetime_default
     weight: 130
     region: content
     settings: {  }

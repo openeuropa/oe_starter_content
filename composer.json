@@ -19,7 +19,6 @@
         "drupal/config_devel": "^1.8",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-dev": "^9.2",
-        "drupal/datetime_timezone": "^1.0@alpha",
         "drupal/entity_browser": "^2.6",
         "drupal/entity_reference_revisions": "^1.9",
         "drupal/field_group": "^3.2",
