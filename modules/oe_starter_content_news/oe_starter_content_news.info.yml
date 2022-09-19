@@ -1,7 +1,7 @@
 name: OpenEuropa Starter Content News
 type: module
 description: A simple news content type.
-core_version_requirement: ^9.2
+core_version_requirement: ^9.3
 package: OpenEuropa Starter Content
 dependencies:
   - drupal:datetime
