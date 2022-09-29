@@ -11,7 +11,6 @@
         "drupal/core": "^9.3"
     },
     "require-dev": {
-        "amphp/parallel-functions": "~1.0.0",
         "composer/installers": "^2.0",
         "drupal/composite_reference": "^2.1",
         "drupal/config_devel": "^1.8",
@@ -61,7 +60,6 @@
             }
         },
         "_readme": [
-            "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors.",
             "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required same minimum version."
         ]
     },
