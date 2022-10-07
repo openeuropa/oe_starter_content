@@ -9,7 +9,6 @@
         "php": ">=7.4",
         "drupal/address": "^1.10",
         "drupal/allowed_formats": "^1.5",
-        "drupal/core": "^9.3",
         "drupal/publication_date": "^2.0@beta",
         "openeuropa/oe_oembed": "^0.4.0"
     },
