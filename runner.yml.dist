@@ -28,6 +28,7 @@ drupal:
     - "./vendor/bin/drush en oe_starter_content_news -y"
     - "./vendor/bin/drush en oe_starter_content_event -y"
     - "./vendor/bin/drush en oe_starter_content_person -y"
+    - "./vendor/bin/drush en oe_starter_content_procurement -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:
