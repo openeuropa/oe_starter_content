@@ -1,0 +1,19 @@
+uuid: 0c63a0fd-9cbc-4bb0-8a26-10d857e0caa0
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.oe_sc_apply_url
+field_name: oe_sc_apply_url
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 5510fde9-2a55-4ad0-a901-e8d2264c3024
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_reference_number
+    - node.type.oe_sc_procurement
+id: node.oe_sc_procurement.oe_sc_reference_number
+field_name: oe_sc_reference_number
+entity_type: node
+bundle: oe_sc_procurement
+label: 'Reference number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: b89839d2-f027-48a2-b8ea-4183ee3f20a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_closing_date
+    - node.type.oe_sc_procurement
+  module:
+    - datetime
+id: node.oe_sc_procurement.oe_sc_closing_date
+field_name: oe_sc_closing_date
+entity_type: node
+bundle: oe_sc_procurement
+label: 'Closing Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

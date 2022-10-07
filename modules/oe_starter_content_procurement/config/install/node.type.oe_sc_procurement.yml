@@ -1,0 +1,18 @@
+uuid: 914b78cb-8a2c-40d4-8997-a3947d166e98
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Procurement
+type: oe_sc_procurement
+description: ''
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: true

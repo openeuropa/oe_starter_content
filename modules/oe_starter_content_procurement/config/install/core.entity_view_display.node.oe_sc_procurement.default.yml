@@ -1,0 +1,44 @@
+uuid: fcf48b59-8b92-4746-99c5-093458bd5c40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_sc_procurement.body
+    - field.field.node.oe_sc_procurement.oe_sc_apply_url
+    - field.field.node.oe_sc_procurement.oe_sc_closing_date
+    - field.field.node.oe_sc_procurement.oe_sc_documents
+    - field.field.node.oe_sc_procurement.oe_sc_introduction
+    - field.field.node.oe_sc_procurement.oe_sc_open_date
+    - field.field.node.oe_sc_procurement.oe_sc_reference_number
+    - field.field.node.oe_sc_procurement.oe_sc_status
+    - field.field.node.oe_sc_procurement.oe_sc_type
+    - node.type.oe_sc_procurement
+  module:
+    - oe_oembed
+    - user
+third_party_settings:
+  oe_oembed:
+    embeddable: false
+id: node.oe_sc_procurement.default
+targetEntityType: node
+bundle: oe_sc_procurement
+mode: default
+content: {  }
+hidden:
+  body: true
+  oe_sc_apply_url: true
+  oe_sc_closing_date: true
+  oe_sc_documents: true
+  oe_sc_introduction: true
+  oe_sc_open_date: true
+  oe_sc_reference_number: true
+  oe_sc_status: true
+  oe_sc_type: true
+  langcode: true
+  links: true
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
+  published_at: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 19ff8c2c-96b8-41c0-ac90-7630a02c238c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.oe_sc_introduction
+field_name: oe_sc_introduction
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

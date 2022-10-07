@@ -1,0 +1,40 @@
+name: OpenEuropa Starter Procurement
+description: The OpenEuropa Procurement allows creation and management of procurements with configurable options.
+package: OpenEuropa
+
+type: module
+core_version_requirement: ^9.2
+dependencies:
+  - allowed_formats:allowed_formats
+  - drupal:menu_ui
+  - drupal:path
+  - drupal:media_library
+  - drupal:publication_date
+  - oe_content:oe_content_documents_field
+  - oe_media:oe_media_avportal
+  - oe_media:oe_oembed
+
+config_devel:
+  install:
+  - core.entity_form_display.node.oe_sc_procurement.default
+  - core.entity_view_display.node.oe_sc_procurement.default
+  - core.entity_view_display.node.oe_sc_procurement.teaser
+  - field.field.node.oe_sc_procurement.body
+  - field.field.node.oe_sc_procurement.oe_sc_apply_url
+  - field.field.node.oe_sc_procurement.oe_sc_closing_date
+  - field.field.node.oe_sc_procurement.oe_sc_documents
+  - field.field.node.oe_sc_procurement.oe_sc_introduction
+  - field.field.node.oe_sc_procurement.oe_sc_open_date
+  - field.field.node.oe_sc_procurement.oe_sc_reference_number
+  - field.field.node.oe_sc_procurement.oe_sc_status
+  - field.field.node.oe_sc_procurement.oe_sc_type
+  - field.storage.node.oe_sc_apply_url
+  - field.storage.node.oe_sc_closing_date
+  - field.storage.node.oe_sc_documents
+  - field.storage.node.oe_sc_introduction
+  - field.storage.node.oe_sc_open_date
+  - field.storage.node.oe_sc_reference_number
+  - field.storage.node.oe_sc_status
+  - field.storage.node.oe_sc_type
+  - language.content_settings.node.oe_sc_procurement
+  - node.type.oe_sc_procurement

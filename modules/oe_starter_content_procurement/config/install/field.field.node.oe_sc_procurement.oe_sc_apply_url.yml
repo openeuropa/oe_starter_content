@@ -1,0 +1,23 @@
+uuid: 49863703-6a4f-4245-9488-e9a6cf92e7c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_apply_url
+    - node.type.oe_sc_procurement
+  module:
+    - link
+id: node.oe_sc_procurement.oe_sc_apply_url
+field_name: oe_sc_apply_url
+entity_type: node
+bundle: oe_sc_procurement
+label: 'Apply URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,23 @@
+uuid: f5a2bd4f-182c-4ff9-a161-339e4ab0fb62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_status
+    - node.type.oe_sc_procurement
+  module:
+    - options
+id: node.oe_sc_procurement.oe_sc_status
+field_name: oe_sc_status
+entity_type: node
+bundle: oe_sc_procurement
+label: Status
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: open
+default_value_callback: ''
+settings: {  }
+field_type: list_string

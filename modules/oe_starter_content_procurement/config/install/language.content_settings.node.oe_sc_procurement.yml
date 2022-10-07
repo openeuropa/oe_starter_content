@@ -1,0 +1,11 @@
+uuid: c8bc5516-0581-4590-9a50-ee8c9336c90a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.oe_sc_procurement
+id: node.oe_sc_procurement
+target_entity_type_id: node
+target_bundle: oe_sc_procurement
+default_langcode: site_default
+language_alterable: false
