@@ -1,7 +1,7 @@
 name: OpenEuropa Starter Content Person
 type: module
 description: Contains the Person content type.
-core_version_requirement: ^9.2
+core_version_requirement: ^9.3
 package: OpenEuropa Starter Content
 dependencies:
   - address:address
@@ -10,6 +10,7 @@ dependencies:
   - drupal:text
   - oe_content:oe_content
   - oe_content:oe_content_social_media_links_field
+  - oe_content:oe_content_sub_entity_document_reference_group
   - oe_media:oe_media
   - oe_media:oe_media_avportal
   - oe_starter_content:oe_starter_content
@@ -20,14 +21,17 @@ config_devel:
     - core.entity_view_display.node.oe_sc_person.default
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_sc_person_country
+    - field.field.node.oe_sc_person.oe_sc_person_documents
     - field.field.node.oe_sc_person.oe_sc_person_first_name
     - field.field.node.oe_sc_person.oe_sc_person_image
     - field.field.node.oe_sc_person.oe_sc_person_last_name
     - field.field.node.oe_sc_person.oe_sc_person_occupation
     - field.field.node.oe_sc_person.oe_sc_person_position
     - field.field.node.oe_sc_person.oe_social_media_links
+    - field.field.node.oe_sc_person.oe_summary
     - field.storage.node.oe_sc_person_additional_info
     - field.storage.node.oe_sc_person_country
+    - field.storage.node.oe_sc_person_documents
     - field.storage.node.oe_sc_person_first_name
     - field.storage.node.oe_sc_person_image
     - field.storage.node.oe_sc_person_last_name
