@@ -5,8 +5,6 @@ dependencies:
     - field.storage.node.oe_sc_publication_document
     - media.type.document
     - node.type.oe_sc_publication
-  module:
-    - oe_content_featured_media_field
 id: node.oe_sc_publication.oe_sc_publication_document
 field_name: oe_sc_publication_document
 entity_type: node
