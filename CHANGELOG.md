@@ -1,8 +1,34 @@
 # Change Log
 
+## [1.0.0-beta3](https://github.com/openeuropa/oe_starter_content/tree/1.0.0-beta3) (2022-09-29)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta2...1.0.0-beta3)
+
+**Merged pull requests:**
+
+- OEL-1910: Remove amphp/parallel-functions package. [\#23](https://github.com/openeuropa/oe_starter_content/pull/23) ([drishu](https://github.com/drishu))
+- OEL-1910: Drupal 9.4 support. [\#22](https://github.com/openeuropa/oe_starter_content/pull/22) ([drishu](https://github.com/drishu))
+
+## [1.0.0-beta2](https://github.com/openeuropa/oe_starter_content/tree/1.0.0-beta2) (2022-08-09)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta1...1.0.0-beta2)
+
+**Merged pull requests:**
+
+- Prepare release 1.0.0-beta2. [\#20](https://github.com/openeuropa/oe_starter_content/pull/20) ([drishu](https://github.com/drishu))
+- Update person epic. [\#18](https://github.com/openeuropa/oe_starter_content/pull/18) ([drishu](https://github.com/drishu))
+- OEL-1893: Move to oe\_content version 3. [\#17](https://github.com/openeuropa/oe_starter_content/pull/17) ([drishu](https://github.com/drishu))
+- OEL-1662: Add registration URL field - v2 [\#16](https://github.com/openeuropa/oe_starter_content/pull/16) ([escuriola](https://github.com/escuriola))
+- Epic-OEL-1548-Person-v1 [\#15](https://github.com/openeuropa/oe_starter_content/pull/15) ([drishu](https://github.com/drishu))
+- OEL-1800: Make Position, Occupation and Country required. [\#14](https://github.com/openeuropa/oe_starter_content/pull/14) ([drishu](https://github.com/drishu))
+- OEL-1798: Add person short description field [\#13](https://github.com/openeuropa/oe_starter_content/pull/13) ([escuriola](https://github.com/escuriola))
+- OEL-1724: Create publication content type [\#12](https://github.com/openeuropa/oe_starter_content/pull/12) ([escuriola](https://github.com/escuriola))
+- OEL-1551: Add documents field for person content type. [\#10](https://github.com/openeuropa/oe_starter_content/pull/10) ([donquixote](https://github.com/donquixote))
+- OEL-1651: Published date prefilled with current date.  [\#9](https://github.com/openeuropa/oe_starter_content/pull/9) ([escuriola](https://github.com/escuriola))
+- OEL-1549: Person content type [\#8](https://github.com/openeuropa/oe_starter_content/pull/8) ([donquixote](https://github.com/donquixote))
+
 ## [1.0.0-beta1](https://github.com/openeuropa/oe_starter_content/tree/1.0.0-beta1) (2022-04-07)
 **Merged pull requests:**
 
+- Prepare release 1.0.0-beta1 [\#7](https://github.com/openeuropa/oe_starter_content/pull/7) ([abel-santos-corral](https://github.com/abel-santos-corral))
 - OEL-1290: Field type replaced by oe\_featured\_media on events. [\#6](https://github.com/openeuropa/oe_starter_content/pull/6) ([Maxfire](https://github.com/Maxfire))
 - OEL-1290: Content types and tests renamed for oe\_content. [\#5](https://github.com/openeuropa/oe_starter_content/pull/5) ([Maxfire](https://github.com/Maxfire))
 - OEL-1016: Fix oe\_summary field type. [\#4](https://github.com/openeuropa/oe_starter_content/pull/4) ([GilNovacomm](https://github.com/GilNovacomm))

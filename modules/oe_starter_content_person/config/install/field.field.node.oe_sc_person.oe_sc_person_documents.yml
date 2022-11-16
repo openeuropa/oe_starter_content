@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_person_documents
+    - node.type.oe_sc_person
+    - oe_content_sub_entity_document_reference.oe_document_reference_type.oe_document
+    - oe_content_sub_entity_document_reference.oe_document_reference_type.oe_document_group
+  module:
+    - composite_reference
+third_party_settings:
+  composite_reference:
+    composite: true
+    composite_revisions: true
+id: node.oe_sc_person.oe_sc_person_documents
+field_name: oe_sc_person_documents
+entity_type: node
+bundle: oe_sc_person
+label: Documents
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:oe_document_reference'
+  handler_settings:
+    target_bundles:
+      oe_document: oe_document
+      oe_document_group: oe_document_group
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: oe_document
+field_type: entity_reference

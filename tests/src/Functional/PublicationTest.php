@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_starter_content\Functional;
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\BrowserTestBase;
@@ -96,7 +97,17 @@ class PublicationTest extends BrowserTestBase {
       $document_media->label() . ' (' . $document_media->id() . ')',
     );
     $page->pressButton('Save');
-    $expected_publication_date = date('Y-m-d');
+
+    $date = DrupalDateTime::createFromTimestamp(\Drupal::service('datetime.time')->getRequestTime());
+    // Datetime widgets for core versions before 9.5 have a bug that causes the
+    // default widget date to be one day earlier than the current day. The
+    // bugfix was not back-ported to 9.3.x.
+    // @todo Remove when updating to 9.5.x.
+    // @see https://www.drupal.org/project/drupal/issues/2993165
+    if (version_compare(\Drupal::VERSION, '9.4.0', '<')) {
+      $date->modify('-1 days');
+    }
+    $expected_publication_date = $date->format('Y-m-d');
 
     // Assert only the required fields.
     $assert_session->elementTextEquals('css', 'h1', 'Publication page');

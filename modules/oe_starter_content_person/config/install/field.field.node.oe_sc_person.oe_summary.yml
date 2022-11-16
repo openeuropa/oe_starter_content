@@ -2,17 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_sc_person_position
+    - field.storage.node.oe_summary
     - node.type.oe_sc_person
-id: node.oe_sc_person.oe_sc_person_position
-field_name: oe_sc_person_position
+  module:
+    - text
+id: node.oe_sc_person.oe_summary
+field_name: oe_summary
 entity_type: node
 bundle: oe_sc_person
-label: Position
+label: 'Short description'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: text_long

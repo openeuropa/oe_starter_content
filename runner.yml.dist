@@ -23,6 +23,7 @@ drupal:
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
     # Enable the modules.
     - "./vendor/bin/drush en config_devel -y"
+    - "./vendor/bin/drush en content_translation -y"
     - "./vendor/bin/drush en oe_starter_content -y"
     - "./vendor/bin/drush en oe_starter_content_news -y"
     - "./vendor/bin/drush en oe_starter_content_event -y"
