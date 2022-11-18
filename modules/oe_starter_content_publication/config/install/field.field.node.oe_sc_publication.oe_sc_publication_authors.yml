@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_sc_publication_document
-    - media.type.document
+    - field.storage.node.oe_sc_publication_authors
+    - node.type.oe_sc_person
     - node.type.oe_sc_publication
-id: node.oe_sc_publication.oe_sc_publication_document
-field_name: oe_sc_publication_document
+id: node.oe_sc_publication.oe_sc_publication_authors
+field_name: oe_sc_publication_authors
 entity_type: node
 bundle: oe_sc_publication
-label: Document
+label: Authors
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      document: document
+      oe_sc_person: oe_sc_person
     sort:
       field: _none
       direction: ASC

@@ -115,6 +115,22 @@ class PublicationTest extends BrowserTestBase {
     $publication_date->hasAttribute('datetime');
     $this->assertSame($expected_publication_date, $publication_date->getText());
 
+    // Create two person nodes.
+    $person_1 = $this->drupalCreateNode([
+      'type' => 'oe_sc_person',
+      'oe_sc_person_first_name' => 'John',
+      'oe_sc_person_last_name' => 'Red',
+      'oe_sc_person_occupation' => 'OpenEuropa Team',
+      'oe_sc_person_position' => 'Manager',
+    ]);
+    $person_2 = $this->drupalCreateNode([
+      'type' => 'oe_sc_person',
+      'oe_sc_person_first_name' => 'Bob',
+      'oe_sc_person_last_name' => 'Blue',
+      'oe_sc_person_occupation' => 'OpenEuropa Team',
+      'oe_sc_person_position' => 'Developer',
+    ]);
+
     // Create a publication with all values filled in.
     $this->drupalGet('node/add/oe_sc_publication');
 
@@ -134,18 +150,16 @@ class PublicationTest extends BrowserTestBase {
     $page->fillField('Date', '2022-06-22');
     $page->fillField(
       'Use existing media',
-      $document_media->label() . ' (' . $document_media->id() . ')',
+      $document_media->label(),
     );
+    $page->fillField('oe_sc_publication_authors[0][target_id]', 'John Red');
+    $assert_session->elementExists('css', 'input[data-drupal-selector="edit-oe-sc-publication-authors-add-more"]')->press();
+    $page->fillField('oe_sc_publication_authors[1][target_id]', 'Bob Blue');
     $page->pressButton('Save');
-
-    // Assert contents of the Publication detail page.
-    $assert_session->pageTextContains('Publication Example publication page has been created.');
-    $assert_session->elementTextEquals('css', 'h1', 'Example publication page');
-
-    $node = $this->getNodeByTitle('Example publication page');
 
     // Visit the same page as anonymous user.
     $this->drupalLogout();
+    $node = $this->getNodeByTitle('Example publication page');
     $this->drupalGet($node->toUrl());
 
     // All fields should be visible to anonymous.
@@ -158,6 +172,8 @@ class PublicationTest extends BrowserTestBase {
     $assert_session->responseContains('<p>Second paragraph of the publication body with end on lines.</p>');
     $assert_session->responseContains($document_file->getFilename());
     $assert_session->responseContains('2022-06-22');
+    $assert_session->linkExistsExact('John Red');
+    $assert_session->linkExistsExact('Bob Blue');
   }
 
 }
