@@ -143,7 +143,7 @@ class PublicationTest extends BrowserTestBase {
     $page->fillField('Reference code', '123456');
     $page->fillField('Short description', 'This is a publication short description.');
     $page->fillField(
-      'Long description',
+      'Description',
       // Line breaks should turn into paragraphs.
       "This is a publication body with end on lines.\n\nSecond paragraph of the publication body with end on lines.",
     );
