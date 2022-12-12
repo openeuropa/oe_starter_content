@@ -1,10 +1,22 @@
 # Change Log
 
+## [1.0.0](https://github.com/openeuropa/oe_starter_content/tree/1.0.0) (2022-12-12)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta3...1.0.0)
+
+**Merged pull requests:**
+
+- OEL-1723: Publication content type. [\#30](https://github.com/openeuropa/oe_starter_content/pull/30) ([brummbar](https://github.com/brummbar))
+- OEL-2130: Remove person dependency from publication content type. [\#29](https://github.com/openeuropa/oe_starter_content/pull/29) ([brummbar](https://github.com/brummbar))
+- OEL-1724: Rename Long description to Description. [\#28](https://github.com/openeuropa/oe_starter_content/pull/28) ([drishu](https://github.com/drishu))
+- OEL-1725: Publication authors field. [\#27](https://github.com/openeuropa/oe_starter_content/pull/27) ([brummbar](https://github.com/brummbar))
+- OEL-1725: Update epic. [\#26](https://github.com/openeuropa/oe_starter_content/pull/26) ([brummbar](https://github.com/brummbar))
+
 ## [1.0.0-beta3](https://github.com/openeuropa/oe_starter_content/tree/1.0.0-beta3) (2022-09-29)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta2...1.0.0-beta3)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-beta3. [\#24](https://github.com/openeuropa/oe_starter_content/pull/24) ([drishu](https://github.com/drishu))
 - OEL-1910: Remove amphp/parallel-functions package. [\#23](https://github.com/openeuropa/oe_starter_content/pull/23) ([drishu](https://github.com/drishu))
 - OEL-1910: Drupal 9.4 support. [\#22](https://github.com/openeuropa/oe_starter_content/pull/22) ([drishu](https://github.com/drishu))
 
