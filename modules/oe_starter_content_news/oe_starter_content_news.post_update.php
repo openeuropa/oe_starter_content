@@ -20,3 +20,11 @@ function oe_starter_content_news_post_update_00001(&$sandbox) {
   ]);
   $field->save();
 }
+
+/**
+ * News content required.
+ */
+function oe_starter_content_news_post_update_00002(): void {
+  $field_config = FieldConfig::load('node.oe_sc_news.body');
+  $field_config->setRequired(TRUE)->save();
+}
