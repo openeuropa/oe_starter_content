@@ -79,7 +79,6 @@ class NewsIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Content field is required.');
 
     // Create a News item.
-    $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
