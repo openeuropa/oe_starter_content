@@ -72,9 +72,13 @@ class NewsIntegrationTest extends BrowserTestBase {
     ]);
     $media_image->save();
 
-    // Create a News item.
+    // Assert that the content field is required.
     $this->drupalGet('node/add/oe_sc_news');
     $page->fillField('Title', 'Example title');
+    $page->pressButton('Save');
+    $assert_session->pageTextContains('Content field is required.');
+
+    // Create a News item.
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
