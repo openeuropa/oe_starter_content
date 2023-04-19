@@ -18,7 +18,7 @@
         "drupal/core-dev": "^9.3",
         "drupal/entity_browser": "^2.6",
         "drupal/inline_entity_form": "^1.0-rc12",
-        "drupal/typed_link": "^2.0",
+        "drupal/typed_link": "^2.0.1",
         "drush/drush": "^10.3",
         "openeuropa/code-review": "^2.0",
         "openeuropa/oe_content": "^3.0.0-alpha4",
@@ -57,6 +57,13 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"
+            }
+        },
+        "patches-ignore": {
+            "openeuropa/oe_content": {
+                "drupal/typed_link": {
+                    "Outdated": "https://www.drupal.org/files/issues/2022-02-09/typed_link_constraints-3263477-2.patch"
+                }
             }
         },
         "_readme": [
