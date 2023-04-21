@@ -17,7 +17,7 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-dev": "^9.3",
         "drupal/entity_browser": "^2.6",
-        "drupal/inline_entity_form": "^1.0-rc12",
+        "drupal/inline_entity_form": "^1.0-rc15",
         "drupal/typed_link": "^2.0.1",
         "drush/drush": "^10.3",
         "openeuropa/code-review": "^2.0",
@@ -63,11 +63,14 @@
             "openeuropa/oe_content": {
                 "drupal/typed_link": {
                     "Outdated": "https://www.drupal.org/files/issues/2022-02-09/typed_link_constraints-3263477-2.patch"
+                },
+                "drupal/inline_entity_form": {
+                    "Outdated": "https://www.drupal.org/files/issues/2022-07-20/ief_removed_references_2875716-104.patch"
                 }
             }
         },
         "_readme": [
-            "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required same minimum version."
+            "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once we can use oe_content ^3.0.0-alpha8."
         ]
     },
     "config": {
