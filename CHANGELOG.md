@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.1.0](https://github.com/openeuropa/oe_starter_content/tree/1.1.0) (2023-04-24)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0...1.1.0)
+
+**Merged pull requests:**
+
+- OEL-2297: Fix composer conflicts. [\#34](https://github.com/openeuropa/oe_starter_content/pull/34) ([drishu](https://github.com/drishu))
+- OEL-2163: Content news field required. [\#32](https://github.com/openeuropa/oe_starter_content/pull/32) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.0.0](https://github.com/openeuropa/oe_starter_content/tree/1.0.0) (2022-12-12)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta3...1.0.0)
 
 **Merged pull requests:**
 
+- Generate changelog for release 1.0.0. [\#31](https://github.com/openeuropa/oe_starter_content/pull/31) ([brummbar](https://github.com/brummbar))
 - OEL-1723: Publication content type. [\#30](https://github.com/openeuropa/oe_starter_content/pull/30) ([brummbar](https://github.com/brummbar))
 - OEL-2130: Remove person dependency from publication content type. [\#29](https://github.com/openeuropa/oe_starter_content/pull/29) ([brummbar](https://github.com/brummbar))
 - OEL-1724: Rename Long description to Description. [\#28](https://github.com/openeuropa/oe_starter_content/pull/28) ([drishu](https://github.com/drishu))
