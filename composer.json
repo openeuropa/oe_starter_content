@@ -58,10 +58,7 @@
             "locations": {
                 "web-root": "./build"
             }
-        },
-        "_readme": [
-            "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once we can use oe_content ^3.0.0-alpha8."
-        ]
+        }
     },
     "config": {
         "sort-packages": true,
