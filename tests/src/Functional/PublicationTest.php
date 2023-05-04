@@ -31,7 +31,7 @@ class PublicationTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'starterkit_theme';
 
   /**
    * Tests the creation of Publication content through the UI.
