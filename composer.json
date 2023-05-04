@@ -67,7 +67,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "phpro/grumphp": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     }
 }
