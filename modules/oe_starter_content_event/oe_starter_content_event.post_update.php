@@ -15,7 +15,7 @@ use Drupal\Core\Entity\Entity\EntityViewDisplay;
  * Add Registration URL field.
  */
 function oe_starter_content_event_post_update_00001(&$sandbox) {
-  $storage = new FileStorage(drupal_get_path('module', 'oe_starter_content_event') . '/config/post_updates/00001_new_registration_url_field');
+  $storage = new FileStorage(\Drupal::service('extension.list.module')->getPath('oe_starter_content_event') . '/config/post_updates/00001_new_registration_url_field');
   \Drupal::service('config.installer')->installOptionalConfig($storage);
 
   // Form display configurations to update.
