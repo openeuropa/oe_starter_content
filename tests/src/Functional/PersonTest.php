@@ -30,7 +30,7 @@ class PersonTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'starterkit_theme';
 
   /**
    * Tests the creation of Person content through the UI.
