@@ -1,10 +1,18 @@
 # Change Log
 
+## [1.2.0](https://github.com/openeuropa/oe_starter_content/tree/1.2.0) (2023-05-12)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.1.0...1.2.0)
+
+**Merged pull requests:**
+
+- EWPP-3016: Drupal 10 compatibility. [\#36](https://github.com/openeuropa/oe_starter_content/pull/36) ([brummbar](https://github.com/brummbar))
+
 ## [1.1.0](https://github.com/openeuropa/oe_starter_content/tree/1.1.0) (2023-04-24)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.0.0...1.1.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.1.0 [\#35](https://github.com/openeuropa/oe_starter_content/pull/35) ([drishu](https://github.com/drishu))
 - OEL-2297: Fix composer conflicts. [\#34](https://github.com/openeuropa/oe_starter_content/pull/34) ([drishu](https://github.com/drishu))
 - OEL-2163: Content news field required. [\#32](https://github.com/openeuropa/oe_starter_content/pull/32) ([tibi2303](https://github.com/tibi2303))
 
