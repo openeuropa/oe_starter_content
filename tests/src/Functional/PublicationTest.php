@@ -99,19 +99,11 @@ class PublicationTest extends BrowserTestBase {
     $page->pressButton('Save');
 
     $date = DrupalDateTime::createFromTimestamp(\Drupal::service('datetime.time')->getRequestTime());
-    // Datetime widgets for core versions before 9.5 have a bug that causes the
-    // default widget date to be one day earlier than the current day. The
-    // bugfix was not back-ported to 9.3.x.
-    // @todo Remove when updating to 9.5.x.
-    // @see https://www.drupal.org/project/drupal/issues/2993165
-    if (version_compare(\Drupal::VERSION, '9.4.0', '<')) {
-      $date->modify('-1 days');
-    }
     $expected_publication_date = $date->format('Y-m-d');
 
     // Assert only the required fields.
     $assert_session->elementTextEquals('css', 'h1', 'Publication page');
-    $publication_date = $page->find('css', 'time');
+    $publication_date = $page->find('css', '.field--name-oe-publication-date time');
     $publication_date->hasAttribute('datetime');
     $this->assertSame($expected_publication_date, $publication_date->getText());
 
