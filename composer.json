@@ -19,9 +19,9 @@
         "drupal/entity_browser": "^2.6",
         "drupal/inline_entity_form": "^1.0-rc15",
         "drupal/typed_link": "^2.0.1",
-        "drush/drush": "^12.4",
+        "drush/drush": "^12",
         "openeuropa/code-review": "^2.0",
-        "openeuropa/oe_content": "^3.0.0-alpha11",
+        "openeuropa/oe_content": "^3",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
         "phpspec/prophecy-phpunit": "^2"
     },
@@ -57,18 +57,6 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"
-            }
-        },
-        "patches": {
-            "drupal/core": {
-                "https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2023-12-21/2230909-309.patch"
-            }
-        },
-        "patches-ignore": {
-            "openeuropa/oe_content": {
-                "drupal/core": {
-                    "https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2022-07-26/2230909-269.patch"
-                }
             }
         }
     },

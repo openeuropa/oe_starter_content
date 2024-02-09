@@ -4,15 +4,6 @@ The OpenEuropa Starter Content provides a series of content types to quickstart 
 
 **Please note:** This project is not compatible with oe_content content types.
 
-#### Drupal 10.1
-
-For Drupal 10.1, the drupal/core patch needs to be overridden.
-If you require this module in Drupal 10.1 you must set the patch in your composer.json.\
-You can do this with the following command:
-```bash
-composer config --merge --json "extra.patches.drupal/core" '{"https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2022-07-26/2230909-269.patch"}'
-```
-
 ## Development setup
 
 You can build the development site by running the following steps:
