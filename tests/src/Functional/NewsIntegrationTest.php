@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_starter_content\Functional;
 
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
-use Drupal\media\Entity\Media;
-use Drupal\file\Entity\File;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**

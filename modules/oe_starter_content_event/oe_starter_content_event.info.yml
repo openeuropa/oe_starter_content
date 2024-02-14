@@ -1,7 +1,7 @@
 name: OpenEuropa Starter Content Event
 type: module
 description: OpenEuropa Starter Content Event.
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 package: OpenEuropa Starter Content
 dependencies:
   - drupal:address
