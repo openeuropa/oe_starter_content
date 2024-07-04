@@ -97,7 +97,7 @@ class PersonTest extends BrowserTestBase {
     );
     $page->fillField('oe_social_media_links[0][uri]', 'https://example.com/');
     $page->fillField('oe_social_media_links[0][title]', 'Follow the crime stories');
-    $page->selectFieldOption('oe_social_media_links[0][link_type]', 'Twitter');
+    $page->selectFieldOption('oe_social_media_links[0][link_type]', 'X');
     // Find the documents field group.
     $documents_section = $page->find('css', '#edit-oe-sc-person-documents');
     // Add a single documents.
@@ -151,7 +151,7 @@ class PersonTest extends BrowserTestBase {
     $assert_session->pageTextContains('Director');
     $assert_session->responseContains('<p>Rates can be negotiated.</p>');
     $assert_session->responseContains('<p>Do not stand below the window.</p>');
-    $assert_session->responseContains('<a href="https://example.com/">Follow the crime stories</a>Twitter');
+    $assert_session->responseContains('<a href="https://example.com/">Follow the crime stories</a>X');
     $assert_session->pageTextContains('Example documents group');
     $this->assertLinkHrefContains('text-0.txt', 'files/text-0.txt');
     $this->assertLinkHrefContains('text-1.txt', 'files/text-1.txt');
