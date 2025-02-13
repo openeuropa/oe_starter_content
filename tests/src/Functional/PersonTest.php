@@ -207,7 +207,7 @@ class PersonTest extends BrowserTestBase {
    * @return \Drupal\media\MediaInterface
    *   The media entity.
    */
-  protected function createDocumentMedia(string $name = NULL, int $index = NULL): MediaInterface {
+  protected function createDocumentMedia(?string $name = NULL, ?int $index = NULL): MediaInterface {
     $name = $name ?? 'Example document' . (($index !== NULL) ? ' ' . $index : '');
     $media = Media::create([
       'bundle' => 'document',
