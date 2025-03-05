@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.4.0](https://github.com/openeuropa/oe_starter_content/tree/1.4.0) (2025-03-05)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.3.0...1.4.0)
+
+**Merged pull requests:**
+
+- EWPP-4991: Update to php8.3. [\#42](https://github.com/openeuropa/oe_starter_content/pull/42) ([drishu](https://github.com/drishu))
+- OEL-3044: Update to Drupal 10.3 [\#41](https://github.com/openeuropa/oe_starter_content/pull/41) ([brummbar](https://github.com/brummbar))
+
 ## [1.3.0](https://github.com/openeuropa/oe_starter_content/tree/1.3.0) (2024-02-15)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.2.0...1.3.0)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.3.0. [\#40](https://github.com/openeuropa/oe_starter_content/pull/40) ([brummbar](https://github.com/brummbar))
 - OEL-2794: Fix code standards. [\#39](https://github.com/openeuropa/oe_starter_content/pull/39) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-2794: Update components to run on Drupal 10.2.x [\#38](https://github.com/openeuropa/oe_starter_content/pull/38) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 
