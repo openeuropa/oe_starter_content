@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_sc_event_online_location
+    - node.type.oe_sc_event
+id: node.oe_sc_event.oe_sc_event_online_location
+field_name: oe_sc_event_online_location
+entity_type: node
+bundle: oe_sc_event
+label: 'Online only'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

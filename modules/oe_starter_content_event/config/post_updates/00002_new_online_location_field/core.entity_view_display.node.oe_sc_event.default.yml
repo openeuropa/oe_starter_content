@@ -14,8 +14,8 @@ dependencies:
   module:
     - address
     - datetime_range
+    - link
     - oe_content_featured_media_field
-    - oe_starter_content_event
     - text
     - user
 id: node.oe_sc_event.default
@@ -99,6 +99,7 @@ content:
     weight: 1
     region: content
 hidden:
+  langcode: true
   oe_content_content_owner: true
   oe_content_legacy_link: true
   oe_content_navigation_title: true

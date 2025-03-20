@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * The module file.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function oe_starter_content_event_form_node_form_alter(array &$form, FormStateInterface $form_state): void {
+  // Modify the visibility of the conditional field.
+  $form['oe_sc_event_location']['#states'] = [
+    'enabled' => [
+      ':input[name="oe_sc_event_online_location[value]"]' => ['checked' => FALSE],
+    ],
+  ];
+}
