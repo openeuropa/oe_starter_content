@@ -1,7 +1,7 @@
 name: OpenEuropa Starter Content Publication
 type: module
 description: OpenEuropa Starter Content Publication.
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 package: OpenEuropa Starter Content
 dependencies:
   - drupal:datetime
