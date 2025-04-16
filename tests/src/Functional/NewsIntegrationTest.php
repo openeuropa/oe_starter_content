@@ -96,14 +96,27 @@ class NewsIntegrationTest extends BrowserTestBase {
     // Assert that publication date was filled with a default value.
     $publication_date = $page->find('css', 'time');
     $publication_date->hasAttribute('datetime');
-    $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
-
+    if (version_compare(\Drupal::VERSION, '11.0.0', '>')) {
+      // The default date format has changed.
+      // @see https://www.drupal.org/node/3467774
+      $this->assertMatchesRegularExpression("/^[A-Z][a-z]{2},\s\d{2}\s[A-Z][a-z]{2}\s\d{4}\s-\s\d{2}:\d{2}$/", $publication_date->getText());
+    }
+    else {
+      $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
+    }
     // Set a custom publication date.
     $this->drupalGet('node/1/edit');
     $page->fillField('Date', '2022-01-24');
     $page->pressButton('Save');
 
-    $assert_session->pageTextContains('01/24/2022');
+    if (version_compare(\Drupal::VERSION, '11.0.0', '>')) {
+      // The default date format has changed.
+      // @see https://www.drupal.org/node/3467774
+      $assert_session->pageTextContains('24 Jan 2022');
+    }
+    else {
+      $assert_session->pageTextContains('01/24/2022');
+    }
   }
 
 }

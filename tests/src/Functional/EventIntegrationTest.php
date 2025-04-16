@@ -131,8 +131,17 @@ class EventIntegrationTest extends BrowserTestBase {
     $assert_session->pageTextContains('Example Event content');
     $assert_session->pageTextContains('Example Event introduction');
     $assert_session->responseContains('text-0.txt');
-    $assert_session->pageTextContains('Sat, 01/22/2022 - 02:12');
-    $assert_session->pageTextContains('Thu, 02/24/2022 - 20:00');
+
+    if (version_compare(\Drupal::VERSION, '11.0.0', '>')) {
+      // The default date format has changed.
+      // @see https://www.drupal.org/node/3467774
+      $assert_session->pageTextContains('Sat, 22 Jan 2022 - 02:12');
+      $assert_session->pageTextContains('Thu, 24 Feb 2022 - 20:00');
+    }
+    else {
+      $assert_session->pageTextContains('Sat, 01/22/2022 - 02:12');
+      $assert_session->pageTextContains('Thu, 02/24/2022 - 20:00');
+    }
     $assert_session->pageTextContains('https://europa.eu');
     $assert_session->elementExists('css', '.field--name-oe-sc-event-registration-url > .field__item > a[href="https://europa.eu"]');
 
