@@ -1,7 +1,7 @@
 # Change Log
 
-## [1.15.0](https://github.com/openeuropa/oe_starter_content/tree/1.15.0) (2025-05-30)
-[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.4.0...1.15.0)
+## [1.5.0](https://github.com/openeuropa/oe_starter_content/tree/1.5.0) (2025-05-30)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.4.0...1.5.0)
 
 **Merged pull requests:**
 
