@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.15.0](https://github.com/openeuropa/oe_starter_content/tree/1.15.0) (2025-05-30)
+[Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.4.0...1.15.0)
+
+**Merged pull requests:**
+
+- EWPP-4641: Clean up composer. [\#45](https://github.com/openeuropa/oe_starter_content/pull/45) ([peterserfozo](https://github.com/peterserfozo))
+- EWPP-4641: Update to Drupal 11. [\#44](https://github.com/openeuropa/oe_starter_content/pull/44) ([peterserfozo](https://github.com/peterserfozo))
+
 ## [1.4.0](https://github.com/openeuropa/oe_starter_content/tree/1.4.0) (2025-03-05)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.3.0...1.4.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.4.0. [\#43](https://github.com/openeuropa/oe_starter_content/pull/43) ([drishu](https://github.com/drishu))
 - EWPP-4991: Update to php8.3. [\#42](https://github.com/openeuropa/oe_starter_content/pull/42) ([drishu](https://github.com/drishu))
 - OEL-3044: Update to Drupal 10.3 [\#41](https://github.com/openeuropa/oe_starter_content/pull/41) ([brummbar](https://github.com/brummbar))
 
