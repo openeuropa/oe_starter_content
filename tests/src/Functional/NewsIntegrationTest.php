@@ -99,7 +99,10 @@ class NewsIntegrationTest extends BrowserTestBase {
     if (version_compare(\Drupal::VERSION, '11.0.0', '>')) {
       // The default date format has changed.
       // @see https://www.drupal.org/node/3467774
-      $this->assertMatchesRegularExpression("/^[A-Z][a-z]{2},\s\d{2}\s[A-Z][a-z]{2}\s\d{4}\s-\s\d{2}:\d{2}$/", $publication_date->getText());
+      $this->assertMatchesRegularExpression(
+        "/^[A-Z][a-z]{2},\s\d{1,2}\s[A-Z][a-z]{2}\s\d{4}\s-\s\d{2}:\d{2}$/",
+        $publication_date->getText()
+      );
     }
     else {
       $this->assertMatchesRegularExpression("/\d+\/\d+\/\d+/", $publication_date->getText());
