@@ -1,10 +1,12 @@
 # Change Log
 
-## [1.5.0](https://github.com/openeuropa/oe_starter_content/tree/1.5.0) (2025-05-30)
+## [1.5.0](https://github.com/openeuropa/oe_starter_content/tree/1.5.0) (2025-06-10)
 [Full Changelog](https://github.com/openeuropa/oe_starter_content/compare/1.4.0...1.5.0)
 
 **Merged pull requests:**
 
+- OEL-3858: Updated images. [\#47](https://github.com/openeuropa/oe_starter_content/pull/47) ([tibi2303](https://github.com/tibi2303))
+- Prepare release 1.15.0. [\#46](https://github.com/openeuropa/oe_starter_content/pull/46) ([drishu](https://github.com/drishu))
 - EWPP-4641: Clean up composer. [\#45](https://github.com/openeuropa/oe_starter_content/pull/45) ([peterserfozo](https://github.com/peterserfozo))
 - EWPP-4641: Update to Drupal 11. [\#44](https://github.com/openeuropa/oe_starter_content/pull/44) ([peterserfozo](https://github.com/peterserfozo))
 
