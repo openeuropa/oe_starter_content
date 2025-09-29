@@ -16,7 +16,6 @@
         "drupal/config_devel": "^1.9",
         "drupal/core-composer-scaffold": "^10 || ^11",
         "drupal/core-dev": "^10 || ^11",
-        "drupal/entity_browser": "~2.13.0",
         "drupal/inline_entity_form": "^1.0-rc15 || ^3.0@RC",
         "drupal/typed_link": "^2.0.1",
         "drush/drush": "^12 || ^13",
