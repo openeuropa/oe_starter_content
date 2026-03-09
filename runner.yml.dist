@@ -15,20 +15,23 @@ drupal:
     port: "8890"
   post_install:
     # Prepare the instance.
-    - "./vendor/bin/drush en toolbar -y"
-    - "./vendor/bin/drush theme:enable olivero -y"
-    - "./vendor/bin/drush theme:enable claro -y"
+    - "./vendor/bin/drush theme:enable olivero claro -y"
     - "./vendor/bin/drush config-set system.theme default olivero -y"
     - "./vendor/bin/drush config-set system.theme admin claro -y"
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
     # Enable the modules.
-    - "./vendor/bin/drush en config_devel -y"
-    - "./vendor/bin/drush en content_translation -y"
-    - "./vendor/bin/drush en oe_starter_content -y"
-    - "./vendor/bin/drush en oe_starter_content_news -y"
-    - "./vendor/bin/drush en oe_starter_content_event -y"
-    - "./vendor/bin/drush en oe_starter_content_person -y"
-    - "./vendor/bin/drush en oe_starter_content_publication -y"
+    -
+      task: "exec"
+      command: |
+        ./vendor/bin/drush en -vy \
+          toolbar \
+          config_devel \
+          content_translation \
+          oe_starter_content \
+          oe_starter_content_news \
+          oe_starter_content_event \
+          oe_starter_content_person \
+          oe_starter_content_publication
     - "./vendor/bin/drush cr"
   settings:
     settings:
