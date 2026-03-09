@@ -6,6 +6,7 @@ package: OpenEuropa Starter Content
 dependencies:
   - drupal:datetime
   - drupal:node
+  - drupal:node_storage_body_field
   - oe_content:oe_content
   - oe_content:oe_content_featured_media_field
   - oe_starter_content:oe_starter_content

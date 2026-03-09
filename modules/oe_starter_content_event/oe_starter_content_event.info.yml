@@ -8,6 +8,7 @@ dependencies:
   - drupal:datetime_range
   - drupal:link
   - drupal:node
+  - drupal:node_storage_body_field
   - drupal:text
   - oe_content:oe_content
   - oe_content:oe_content_documents_field
