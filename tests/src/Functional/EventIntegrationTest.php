@@ -8,6 +8,7 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\oe_content\Traits\NodeBodyFieldStorageTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -18,6 +19,7 @@ use Drupal\Tests\TestFileCreationTrait;
 class EventIntegrationTest extends BrowserTestBase {
 
   use MediaTypeCreationTrait;
+  use NodeBodyFieldStorageTrait;
   use TestFileCreationTrait;
 
   /**
@@ -37,6 +39,8 @@ class EventIntegrationTest extends BrowserTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    $this->ensureNodeBodyTextWithSummary();
 
     // Create user.
     $user = $this->drupalCreateUser([
